@@ -1,0 +1,16 @@
+#!/bin/bash
+STATS_Y=$(date +%Y)
+STATS_MONT=$(date +%m)
+STATS_DAY=$(date +%d)
+
+#STATS_Y=2015
+#STATS_MONT=02
+
+mysqldump --databases aprs2rrd -u userbackup --hex-blob > /var/backup/localhost_aprs2rrd__$STATS_Y-$STATS_MONT-$STATS_DAY.sql
+mysqldump --databases lugepl_wordpress_5_7  -u userbackup --hex-blob > /var/backup/localhost_lugepl_wordpress_5_7__$STATS_Y-$STATS_MONT-$STATS_DAY.sql
+cd /var/backup
+tar cvf localhost_aprs2rrd__$STATS_Y-$STATS_MONT-$STATS_DAY.sql.tar localhost_aprs2rrd__$STATS_Y-$STATS_MONT-$STATS_DAY.sql
+gzip -9 localhost_aprs2rrd__$STATS_Y-$STATS_MONT-$STATS_DAY.sql.tar
+rm localhost_aprs2rrd__$STATS_Y-$STATS_MONT-$STATS_DAY.sql 
+#rm /var/log/tomcat8/access.log
+#cp /var/log/tomcat8/localhost_access_log.$STATS_Y-$STATS_MONT-$STATS_DAY.txt /var/log/tomcat8/access.log

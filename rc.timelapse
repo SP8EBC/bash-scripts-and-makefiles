@@ -1,0 +1,78 @@
+#!/bin/bash
+
+# Dahaua CCTV cameras stores JPG images in structure like:
+#	$CAMERA_NAME/YYYY-MM-DD/pic_001/HH/HH.MM.SS[R][0@0][0].jpg
+# not sure what this '[R][0@0][0]' constant suffix means
+
+# from which date a timelapse shall be generated
+# 10#$1 means to expand the number using base 10.
+# This is done to remove any leading zeros from the date 
+# due to the fact that bash will interpret the number in base 8 (octal).
+FROM_DAY=$(($3)); FROM_MONTH=$((10#$2)); FROM_YEAR=$((10#$1))
+TO_DAY=$(($6)); TO_MONTH=$((10#$5)); TO_YEAR=$((10#$4))
+
+# where JPG files for timelapse shall be copied
+JPGDIR="/var/local/mateusz/timelapse_jpg"
+
+STARTED=0
+JPGCOUNTER=0
+
+copy_all_jpeg() {
+	DIRCNT=0
+	for dir in $1/*/; do
+		for file in $dir/*.jpg; do
+			((JPGCOUNTER++))
+			((DIRCNT++))
+			if [ $((JPGCOUNTER % 2)) -eq 0 ]; then
+				continue
+			fi
+			DSTFN=$(printf '%09d__%s.jpg' "$JPGCOUNTER" "${1////-}")
+			cp $file "$JPGDIR/$DSTFN"
+		done
+	done	
+	echo "copyied $DIRCNT JPG images from all subdirs of $1"
+}
+
+# checks directory with name like 'YYYY-MM-DD' if it is within
+# dates we're interested in
+process_directory_date() {
+	# edge case with directory from year we're starting from
+	if [ $STARTED -eq 0 ] && [ $1 -eq  $FROM_YEAR ]; then
+		if [ $2 -ge $FROM_MONTH ]; then
+			if [ $3 -ge $FROM_DAY ]; then
+				STARTED=1
+			fi
+		fi
+	elif [ $STARTED -eq 1 ] && [ $1 -eq $TO_YEAR ]; then
+		if [ $2 -ge $TO_MONTH ]; then 
+			if [ $3 -ge $TO_DAY ]; then
+				STARTED=0
+			fi
+		fi
+	fi	       
+	
+	if [ $STARTED -eq 1 ]; then
+		copy_all_jpeg "$4/pic_001"
+		#echo "$1-$2-$3"
+	fi
+}
+
+echo "starting from $FROM_DAY-$FROM_MONTH-$FROM_YEAR, ending at $TO_DAY-$TO_MONTH-$TO_YEAR"
+if [ ! -d $JPGDIR ]; then
+	mkdir $JPGDIR
+fi
+
+for dir in */; do
+	declare -i DIR_YEAR
+	declare -i DIR_MONTH
+	declare -i DIR_DAY
+	DIR_YEAR=$(echo ${dir%*/} | grep -o -E ^[0-9]{4})
+	DIR_MONTH=10#$(echo ${dir%*/} | grep -o -E -m 1 -- '\b[0-9]{2}\b' | head -n 1)
+	DIR_DAY=10#$(echo ${dir%*/} | grep -o -E -m 1 -- '\b[0-9]{2}$')
+	process_directory_date $DIR_YEAR $DIR_MONTH $DIR_DAY ${dir%*/}
+done
+
+echo "$JPGCOUNTER images was copied in total"
+
+ffmpeg -framerate 60 -pattern_type glob -i "$JPGDIR/*.jpg" -c:v libx264 -pix_fmt yuv420p out.mp4
+

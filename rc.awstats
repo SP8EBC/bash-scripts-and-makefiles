@@ -1,0 +1,149 @@
+#!/bin/bash
+STATS_Y=$(date +%Y)
+STATS_MONT=$(date +%m)
+STATS_DAY=$(date +%d)
+
+#STATS_Y=2015
+#STATS_MONT=02
+
+
+rm /var/log/tomcat8/access.log
+cp /var/log/tomcat8/localhost_access_log.$STATS_Y-$STATS_MONT-$STATS_DAY.txt /var/log/tomcat8/access.log
+
+#printf "$STATS_Y/$STATS_MONT"
+if [ ! -d "/home/www-server/awstats/$STATS_Y" ]; then
+	mkdir "/home/www-server/awstats/$STATS_Y"
+fi
+if [ ! -d "/home/www-server/awstats/$STATS_Y/$STATS_MONT" ]; then
+        mkdir "/home/www-server/awstats/$STATS_Y/$STATS_MONT"
+fi
+if [ ! -d "/home/www-server/awstats/$STATS_Y/$STATS_MONT/tomcat" ]; then
+        mkdir "/home/www-server/awstats/$STATS_Y/$STATS_MONT/tomcat"
+fi
+if [ ! -d "/home/www-server/awstats/$STATS_Y/$STATS_MONT/akl.prz.edu.pl" ]; then
+        mkdir "/home/www-server/awstats/$STATS_Y/$STATS_MONT/akl.prz.edu.pl"
+fi
+if [ ! -d "/home/www-server/awstats/$STATS_Y/$STATS_MONT/luge.pl" ]; then
+        mkdir "/home/www-server/awstats/$STATS_Y/$STATS_MONT/luge.pl"
+fi
+if [ ! -d "/home/www-server/awstats/$STATS_Y/$STATS_MONT/dzialy" ]; then
+        mkdir "/home/www-server/awstats/$STATS_Y/$STATS_MONT/dzialy"
+fi
+if [ ! -d "/home/www-server/awstats/$STATS_Y/$STATS_MONT/chelm" ]; then
+        mkdir "/home/www-server/awstats/$STATS_Y/$STATS_MONT/chelm"
+fi
+if [ ! -d "/home/www-server/awstats/$STATS_Y/$STATS_MONT/skrzyczne" ]; then
+        mkdir "/home/www-server/awstats/$STATS_Y/$STATS_MONT/skrzyczne"
+fi
+if [ ! -d "/home/www-server/awstats/$STATS_Y/$STATS_MONT/dzikowiec" ]; then
+        mkdir "/home/www-server/awstats/$STATS_Y/$STATS_MONT/dzikowiec"
+fi
+if [ ! -d "/home/www-server/awstats/$STATS_Y/$STATS_MONT/opole" ]; then
+        mkdir "/home/www-server/awstats/$STATS_Y/$STATS_MONT/opole"
+fi
+if [ ! -d "/home/www-server/awstats/$STATS_Y/$STATS_MONT/dukla" ]; then
+        mkdir "/home/www-server/awstats/$STATS_Y/$STATS_MONT/dukla"
+fi
+if [ ! -d "/home/www-server/awstats/$STATS_Y/$STATS_MONT/bezmiech" ]; then
+        mkdir "/home/www-server/awstats/$STATS_Y/$STATS_MONT/bezmiech"
+fi
+if [ ! -d "/home/www-server/awstats/$STATS_Y/$STATS_MONT/kozia" ]; then
+        mkdir "/home/www-server/awstats/$STATS_Y/$STATS_MONT/kozia"
+fi
+if [ ! -d "/home/www-server/awstats/$STATS_Y/$STATS_MONT/stefanka" ]; then
+        mkdir "/home/www-server/awstats/$STATS_Y/$STATS_MONT/stefanka"
+fi
+if [ ! -d "/home/www-server/awstats/$STATS_Y/$STATS_MONT/mikuszowice" ]; then
+        mkdir "/home/www-server/awstats/$STATS_Y/$STATS_MONT/mikuszowice"
+fi
+if [ ! -d "/home/www-server/awstats/$STATS_Y/$STATS_MONT/cieszyn" ]; then
+        mkdir "/home/www-server/awstats/$STATS_Y/$STATS_MONT/cieszyn"
+fi
+if [ ! -d "/home/www-server/awstats/$STATS_Y/$STATS_MONT/magurka" ]; then
+        mkdir "/home/www-server/awstats/$STATS_Y/$STATS_MONT/magurka"
+fi
+if [ ! -d "/home/www-server/awstats/$STATS_Y/$STATS_MONT/leskowiec" ]; then
+        mkdir "/home/www-server/awstats/$STATS_Y/$STATS_MONT/leskowiec"
+fi
+if [ ! -d "/home/www-server/awstats/$STATS_Y/$STATS_MONT/szczawiny" ]; then
+        mkdir "/home/www-server/awstats/$STATS_Y/$STATS_MONT/szczawiny"
+fi
+if [ ! -d "/home/www-server/awstats/$STATS_Y/$STATS_MONT/halny" ]; then
+        mkdir "/home/www-server/awstats/$STATS_Y/$STATS_MONT/halny"
+fi
+if [ ! -d "/home/www-server/awstats/$STATS_Y/$STATS_MONT/jaworzyna" ]; then
+        mkdir "/home/www-server/awstats/$STATS_Y/$STATS_MONT/jaworzyna"
+fi
+if [ ! -d "/home/www-server/awstats/$STATS_Y/$STATS_MONT/zar" ]; then
+        mkdir "/home/www-server/awstats/$STATS_Y/$STATS_MONT/zar"
+fi
+if [ ! -d "/home/www-server/awstats/$STATS_Y/$STATS_MONT/pilsko" ]; then
+        mkdir "/home/www-server/awstats/$STATS_Y/$STATS_MONT/pilsko"
+fi
+if [ ! -d "/home/www-server/awstats/$STATS_Y/$STATS_MONT/litworowy" ]; then
+        mkdir "/home/www-server/awstats/$STATS_Y/$STATS_MONT/litworowy"
+fi
+
+if [ ! -d "/home/www-server/awstats/$STATS_Y/$STATS_MONT/schronisko" ]; then
+        mkdir "/home/www-server/awstats/$STATS_Y/$STATS_MONT/schronisko"
+fi
+if [ ! -d "/home/www-server/awstats/$STATS_Y/$STATS_MONT/video" ]; then
+        mkdir "/home/www-server/awstats/$STATS_Y/$STATS_MONT/video"
+fi
+
+
+
+
+awstats -config=tomcat -update
+/usr/share/awstats/tools/awstats_buildstaticpages.pl -config=tomcat -lang=PL -month=$STATS_MONT -year=$STATS_Y -dir=/home/www-server/awstats/$STATS_Y/$STATS_MONT/tomcat
+
+awstats -config=awstats.conf -update
+/usr/share/awstats/tools/awstats_buildstaticpages.pl -config=awstats.conf -lang=PL -month=$STATS_MONT -year=$STATS_Y -dir=/home/www-server/awstats/$STATS_Y/$STATS_MONT/akl.prz.edu.pl
+awstats -config=dzialy -update
+/usr/share/awstats/tools/awstats_buildstaticpages.pl -config=dzialy -lang=PL -month=$STATS_MONT -year=$STATS_Y -dir=/home/www-server/awstats/$STATS_Y/$STATS_MONT/dzialy
+awstats -config=chelm -update
+/usr/share/awstats/tools/awstats_buildstaticpages.pl -config=chelm -lang=PL -month=$STATS_MONT -year=$STATS_Y -dir=/home/www-server/awstats/$STATS_Y/$STATS_MONT/chelm
+awstats -config=skrzyczne -update
+/usr/share/awstats/tools/awstats_buildstaticpages.pl -config=skrzyczne -lang=PL -month=$STATS_MONT -year=$STATS_Y -dir=/home/www-server/awstats/$STATS_Y/$STATS_MONT/skrzyczne
+awstats -config=dzikowiec -update
+/usr/share/awstats/tools/awstats_buildstaticpages.pl -config=dzikowiec -lang=PL -month=$STATS_MONT -year=$STATS_Y -dir=/home/www-server/awstats/$STATS_Y/$STATS_MONT/dzikowiec
+awstats -config=opole -update
+/usr/share/awstats/tools/awstats_buildstaticpages.pl -config=opole -lang=PL -month=$STATS_MONT -year=$STATS_Y -dir=/home/www-server/awstats/$STATS_Y/$STATS_MONT/opole
+awstats -config=dukla -update
+/usr/share/awstats/tools/awstats_buildstaticpages.pl -config=dukla -lang=PL -month=$STATS_MONT -year=$STATS_Y -dir=/home/www-server/awstats/$STATS_Y/$STATS_MONT/dukla
+awstats -config=bezmiech -update
+/usr/share/awstats/tools/awstats_buildstaticpages.pl -config=bezmiech -lang=PL -month=$STATS_MONT -year=$STATS_Y -dir=/home/www-server/awstats/$STATS_Y/$STATS_MONT/bezmiech
+awstats -config=kozia -update
+/usr/share/awstats/tools/awstats_buildstaticpages.pl -config=kozia -lang=PL -month=$STATS_MONT -year=$STATS_Y -dir=/home/www-server/awstats/$STATS_Y/$STATS_MONT/kozia
+awstats -config=stefanka -update
+/usr/share/awstats/tools/awstats_buildstaticpages.pl -config=stefanka -lang=PL -month=$STATS_MONT -year=$STATS_Y -dir=/home/www-server/awstats/$STATS_Y/$STATS_MONT/stefanka
+awstats -config=mikuszowice -update
+/usr/share/awstats/tools/awstats_buildstaticpages.pl -config=mikuszowice -lang=PL -month=$STATS_MONT -year=$STATS_Y -dir=/home/www-server/awstats/$STATS_Y/$STATS_MONT/mikuszowice
+awstats -config=lugepl -update
+/usr/share/awstats/tools/awstats_buildstaticpages.pl -config=lugepl -lang=PL -month=$STATS_MONT -year=$STATS_Y -dir=/home/www-server/awstats/$STATS_Y/$STATS_MONT/luge.pl
+awstats -config=cieszyn -update
+/usr/share/awstats/tools/awstats_buildstaticpages.pl -config=cieszyn -lang=PL -month=$STATS_MONT -year=$STATS_Y -dir=/home/www-server/awstats/$STATS_Y/$STATS_MONT/cieszyn
+awstats -config=magurka -update
+/usr/share/awstats/tools/awstats_buildstaticpages.pl -config=magurka -lang=PL -month=$STATS_MONT -year=$STATS_Y -dir=/home/www-server/awstats/$STATS_Y/$STATS_MONT/magurka
+awstats -config=leskowiec -update
+/usr/share/awstats/tools/awstats_buildstaticpages.pl -config=leskowiec -lang=PL -month=$STATS_MONT -year=$STATS_Y -dir=/home/www-server/awstats/$STATS_Y/$STATS_MONT/leskowiec
+awstats -config=szczawiny -update
+/usr/share/awstats/tools/awstats_buildstaticpages.pl -config=szczawiny -lang=PL -month=$STATS_MONT -year=$STATS_Y -dir=/home/www-server/awstats/$STATS_Y/$STATS_MONT/szczawiny
+awstats -config=halny -update
+/usr/share/awstats/tools/awstats_buildstaticpages.pl -config=halny -lang=PL -month=$STATS_MONT -year=$STATS_Y -dir=/home/www-server/awstats/$STATS_Y/$STATS_MONT/halny
+awstats -config=jaworzyna -update
+/usr/share/awstats/tools/awstats_buildstaticpages.pl -config=jaworzyna -lang=PL -month=$STATS_MONT -year=$STATS_Y -dir=/home/www-server/awstats/$STATS_Y/$STATS_MONT/jaworzyna
+
+awstats -config=zar -update
+/usr/share/awstats/tools/awstats_buildstaticpages.pl -config=zar -lang=PL -month=$STATS_MONT -year=$STATS_Y -dir=/home/www-server/awstats/$STATS_Y/$STATS_MONT/zar
+awstats -config=pilsko -update
+/usr/share/awstats/tools/awstats_buildstaticpages.pl -config=pilsko -lang=PL -month=$STATS_MONT -year=$STATS_Y -dir=/home/www-server/awstats/$STATS_Y/$STATS_MONT/pilsko
+awstats -config=litworowy -update
+/usr/share/awstats/tools/awstats_buildstaticpages.pl -config=litworowy -lang=PL -month=$STATS_MONT -year=$STATS_Y -dir=/home/www-server/awstats/$STATS_Y/$STATS_MONT/litworowy
+
+awstats -config=schronisko -update
+/usr/share/awstats/tools/awstats_buildstaticpages.pl -config=schronisko -lang=PL -month=$STATS_MONT -year=$STATS_Y -dir=/home/www-server/awstats/$STATS_Y/$STATS_MONT/schronisko
+awstats -config=video -update
+/usr/share/awstats/tools/awstats_buildstaticpages.pl -config=video -lang=PL -month=$STATS_MONT -year=$STATS_Y -dir=/home/www-server/awstats/$STATS_Y/$STATS_MONT/video
+
+
