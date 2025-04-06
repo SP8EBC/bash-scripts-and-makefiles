@@ -1,0 +1,1 @@
+root@skrzyczne-radio:/var/nvme# journalctl -r -q SYSLOG_FACILITY=10 SYSLOG_FACILITY=4

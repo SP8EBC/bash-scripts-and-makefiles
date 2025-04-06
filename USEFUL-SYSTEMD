@@ -1,0 +1,48 @@
+root@magurka-aprs:/lib/systemd/system# systemctl list-dependencies > ~/systemd_dependencies
+root@magurka-aprs:/lib/systemd/system# 
+
+
+
+root@magurka-aprs:/lib/systemd/system# systemd-analyze critical-chain
+The time when unit became active or started is printed after the "@" character.
+The time the unit took to start is printed after the "+" character.
+
+graphical.target @6.547s
+└─svxlink.service @6.531s +14ms
+  └─multi-user.target @6.521s
+    └─postgresql.service @6.515s +5ms
+      └─postgresql@15-main.service @3.779s +2.709s
+        └─network.target @3.775s
+          └─networking.service @1.967s +1.807s
+            └─apparmor.service @1.844s +118ms
+              └─local-fs.target @1.842s
+                └─run-credentials-systemd\x2dtmpfiles\x2dsetup.service.mount @1.859s
+                  └─local-fs-pre.target @581ms
+                    └─keyboard-setup.service @365ms +215ms
+                      └─systemd-journald.socket @355ms
+                        └─system.slice @334ms
+                          └─-.slice @334ms
+root@magurka-aprs:/lib/systemd/system# 
+
+
+
+
+
+
+root@magurka-aprs:/lib/systemd/system# systemctl list-timers --all
+NEXT                        LEFT          LAST                        PASSED       UNIT                         ACTIVATES                     
+Sun 2025-03-16 14:07:51 CET 2min 11s left -                           -            systemd-tmpfiles-clean.timer systemd-tmpfiles-clean.service
+Sun 2025-03-16 14:30:17 CET 24min left    Sun 2025-03-16 13:32:04 CET 33min ago    anacron.timer                anacron.service
+Mon 2025-03-17 00:00:00 CET 9h left       -                           -            dpkg-db-backup.timer         dpkg-db-backup.service
+Mon 2025-03-17 00:00:00 CET 9h left       Sun 2025-03-16 00:00:01 CET 14h ago      logrotate.timer              logrotate.service
+Mon 2025-03-17 00:11:58 CET 10h left      Sun 2025-03-16 06:31:56 CET 7h ago       apt-daily.timer              apt-daily.service
+Mon 2025-03-17 00:20:14 CET 10h left      Mon 2025-03-10 01:35:03 CET 6 days ago   fstrim.timer                 fstrim.service
+Mon 2025-03-17 03:27:16 CET 13h left      Sun 2025-03-16 09:30:06 CET 4h 35min ago man-db.timer                 man-db.service
+Mon 2025-03-17 06:39:36 CET 16h left      Sun 2025-03-16 06:07:32 CET 7h ago       apt-daily-upgrade.timer      apt-daily-upgrade.service
+Sun 2025-03-23 03:10:10 CET 6 days left   Sun 2025-03-16 03:10:07 CET 10h ago      e2scrub_all.timer            e2scrub_all.service
+-                           -             -                           -            svxlink.timer                svxlink.service
+
+10 timers listed.
+root@magurka-aprs:/lib/systemd/system# 
+
+
