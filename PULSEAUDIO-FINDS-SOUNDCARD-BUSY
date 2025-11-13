@@ -1,0 +1,768 @@
+root@skrzyczne-radio:/var/local/lubeckim# /usr/bin/pulseaudio --log-level=4 --log-target=auto --system --realtime --disallow-exit --no-cpu-limit 
+W: [pulseaudio] main.c: Running in system mode, but --disallow-module-loading not set.
+N: [pulseaudio] main.c: Running in system mode, forcibly disabling SHM mode.
+N: [pulseaudio] main.c: Running in system mode, forcibly disabling exit idle time.
+D: [pulseaudio] core-rtclock.c: Timer slack is set to 50 us.
+D: [pulseaudio] core-util.c: setpriority() worked.
+I: [pulseaudio] core-util.c: Successfully gained nice level -11.
+I: [pulseaudio] main.c: Found user 'pulse' (UID 104) and group 'pulse' (GID 110).
+W: [pulseaudio] main.c: Home directory of user 'pulse' is not '/var/run/pulse', ignoring.
+I: [pulseaudio] main.c: Successfully changed user to "pulse".
+I: [pulseaudio] main.c: This is PulseAudio 16.1
+D: [pulseaudio] main.c: Compilation CFLAGS: Not yet supported on meson
+D: [pulseaudio] main.c: Running on host: Linux x86_64 6.1.0-31-amd64 #1 SMP PREEMPT_DYNAMIC Debian 6.1.128-1 (2025-02-07)
+D: [pulseaudio] main.c: Found 4 CPUs.
+I: [pulseaudio] main.c: Page size is 4096 bytes
+D: [pulseaudio] main.c: Compiled with Valgrind support: no
+D: [pulseaudio] main.c: Running in valgrind mode: no
+D: [pulseaudio] main.c: Running in VM: no
+D: [pulseaudio] main.c: Running from build tree: no
+D: [pulseaudio] main.c: Optimized build: yes
+D: [pulseaudio] main.c: All asserts enabled.
+I: [pulseaudio] main.c: Machine ID is 74342bde2f9e4d9dacf392afeea14e19.
+I: [pulseaudio] main.c: Session ID is 879.
+I: [pulseaudio] main.c: Using runtime directory /var/run/pulse.
+I: [pulseaudio] main.c: Using state directory /var/lib/pulse.
+I: [pulseaudio] main.c: Using modules directory /usr/lib/pulse-16.1+dfsg1/modules.
+I: [pulseaudio] main.c: Running in system mode: yes
+W: [pulseaudio] main.c: OK, so you are running PA in system mode. Please make sure that you actually do want to do that.
+W: [pulseaudio] main.c: Please read http://www.freedesktop.org/wiki/Software/PulseAudio/Documentation/User/WhatIsWrongWithSystemWide/ for an explanation why system mode is usually a bad idea.
+I: [pulseaudio] main.c: System supports high resolution timers
+D: [pulseaudio] memblock.c: Using private memory pool with 1024 slots of size 64.0 KiB each, total size is 64.0 MiB, maximum usable slot size is 65472
+I: [pulseaudio] cpu-x86.c: CPU flags: CMOV MMX SSE SSE2 SSE3 SSSE3 SSE4_1 SSE4_2 
+I: [pulseaudio] svolume_mmx.c: Initialising MMX optimized volume functions.
+I: [pulseaudio] remap_mmx.c: Initialising MMX optimized remappers.
+I: [pulseaudio] svolume_sse.c: Initialising SSE2 optimized volume functions.
+I: [pulseaudio] remap_sse.c: Initialising SSE2 optimized remappers.
+I: [pulseaudio] sconv_sse.c: Initialising SSE2 optimized conversions.
+I: [pulseaudio] svolume_orc.c: Initialising ORC optimized volume functions.
+D: [pulseaudio] database-tdb.c: Opened TDB database '/var/lib/pulse/74342bde2f9e4d9dacf392afeea14e19-device-volumes.tdb'
+I: [pulseaudio] database.c: Successfully opened 'device-volumes' database file '/var/lib/pulse/74342bde2f9e4d9dacf392afeea14e19-device-volumes.tdb'.
+I: [pulseaudio] module.c: Loaded "module-device-restore" (index: #0; argument: "").
+D: [pulseaudio] database-tdb.c: Opened TDB database '/var/lib/pulse/74342bde2f9e4d9dacf392afeea14e19-stream-volumes.tdb'
+I: [pulseaudio] database.c: Successfully opened 'stream-volumes' database file '/var/lib/pulse/74342bde2f9e4d9dacf392afeea14e19-stream-volumes.tdb'.
+D: [pulseaudio] protocol-dbus.c: Interface org.PulseAudio.Ext.StreamRestore1 added for object /org/pulseaudio/stream_restore1
+D: [pulseaudio] protocol-dbus.c: Interface org.PulseAudio.Ext.StreamRestore1.RestoreEntry added for object /org/pulseaudio/stream_restore1/entry0
+D: [pulseaudio] protocol-dbus.c: Interface org.PulseAudio.Ext.StreamRestore1.RestoreEntry added for object /org/pulseaudio/stream_restore1/entry1
+D: [pulseaudio] protocol-dbus.c: Interface org.PulseAudio.Ext.StreamRestore1.RestoreEntry added for object /org/pulseaudio/stream_restore1/entry2
+D: [pulseaudio] protocol-dbus.c: Interface org.PulseAudio.Ext.StreamRestore1.RestoreEntry added for object /org/pulseaudio/stream_restore1/entry3
+D: [pulseaudio] protocol-dbus.c: Interface org.PulseAudio.Ext.StreamRestore1.RestoreEntry added for object /org/pulseaudio/stream_restore1/entry4
+D: [pulseaudio] protocol-dbus.c: Interface org.PulseAudio.Ext.StreamRestore1.RestoreEntry added for object /org/pulseaudio/stream_restore1/entry5
+I: [pulseaudio] module.c: Loaded "module-stream-restore" (index: #1; argument: "").
+D: [pulseaudio] database-tdb.c: Opened TDB database '/var/lib/pulse/74342bde2f9e4d9dacf392afeea14e19-card-database.tdb'
+I: [pulseaudio] database.c: Successfully opened 'card-database' database file '/var/lib/pulse/74342bde2f9e4d9dacf392afeea14e19-card-database.tdb'.
+I: [pulseaudio] module.c: Loaded "module-card-restore" (index: #2; argument: "").
+D: [pulseaudio] module.c: Checking for existence of '/usr/lib/pulse-16.1+dfsg1/modules/module-udev-detect.so': success
+D: [pulseaudio] module-udev-detect.c: /dev/snd/controlC0 is accessible: yes
+D: [pulseaudio] module-udev-detect.c: /devices/pci0000:00/0000:00:0e.0/sound/card0 is busy: yes
+
+
+========================
+root@skrzyczne-radio:/var/local/lubeckim# cd /proc/asound/card0/
+codec#0  codec#2  eld#2.0  eld#2.1  eld#2.2  eld#2.3  eld#2.4  eld#2.5  eld#2.6  eld#2.7  eld#2.8  id       pcm0c/   pcm0p/   pcm2c/   pcm3p/   pcm7p/   pcm8p/   
+root@skrzyczne-radio:/var/local/lubeckim# cd /proc/asound/card0/pcm
+pcm0c/ pcm0p/ pcm2c/ pcm3p/ pcm7p/ pcm8p/ 
+root@skrzyczne-radio:/var/local/lubeckim# cd /proc/asound/card0/pcm0
+pcm0c/ pcm0p/ 
+root@skrzyczne-radio:/var/local/lubeckim# cd /proc/asound/card0/pcm0c/
+root@skrzyczne-radio:/proc/asound/card0/pcm0c# ls
+info  sub0
+root@skrzyczne-radio:/proc/asound/card0/pcm0c# cd sub0/
+hw_params     info          prealloc      prealloc_max  status        sw_params     
+root@skrzyczne-radio:/proc/asound/card0/pcm0c# cd sub0/
+root@skrzyczne-radio:/proc/asound/card0/pcm0c/sub0# cat status 
+closed
+root@skrzyczne-radio:/proc/asound/card0/pcm0c/sub0# 
+
+
+===============================
+root@skrzyczne-radio:/proc/asound/card0# systemctl stop remotetrx
+root@skrzyczne-radio:/proc/asound/card0# systemctl status remotetrx
+○ remotetrx.service - SvxLink remote transceiver repeater control software
+     Loaded: loaded (/lib/systemd/system/remotetrx.service; enabled; preset: enabled)
+     Active: inactive (dead) since Mon 2025-05-26 17:28:59 CEST; 4s ago
+   Duration: 5h 18min 15.932s
+       Docs: man:remotetrx(1)
+    Process: 585 ExecStart=/usr/bin/remotetrx --pidfile=${PIDFILE} --logfile=${LOGFILE} --config=${CFGFILE} --runasuser=${RUNASUSER} (code=exited, status=0/SUCCESS)
+   Main PID: 585 (code=exited, status=0/SUCCESS)
+        CPU: 5min 29.605s
+
+May 26 12:10:43 skrzyczne-radio systemd[1]: Starting remotetrx.service - SvxLink remote transceiver repeater control software...
+May 26 12:10:43 skrzyczne-radio systemd[1]: Started remotetrx.service - SvxLink remote transceiver repeater control software.
+May 26 17:28:59 skrzyczne-radio systemd[1]: Stopping remotetrx.service - SvxLink remote transceiver repeater control software...
+May 26 17:28:59 skrzyczne-radio systemd[1]: remotetrx.service: Deactivated successfully.
+May 26 17:28:59 skrzyczne-radio systemd[1]: Stopped remotetrx.service - SvxLink remote transceiver repeater control software.
+May 26 17:28:59 skrzyczne-radio systemd[1]: remotetrx.service: Consumed 5min 29.605s CPU time.
+
+
+=================================
+
+lubeckim@skrzyczne-radio:~$ su
+Password: 
+root@skrzyczne-radio:/var/local/lubeckim# /usr/bin/pulseaudio --log-level=4 --log-target=auto --system --realtime --disallow-exit --no-cpu-limit 
+W: [pulseaudio] main.c: Running in system mode, but --disallow-module-loading not set.
+N: [pulseaudio] main.c: Running in system mode, forcibly disabling SHM mode.
+N: [pulseaudio] main.c: Running in system mode, forcibly disabling exit idle time.
+D: [pulseaudio] core-rtclock.c: Timer slack is set to 50 us.
+D: [pulseaudio] core-util.c: setpriority() worked.
+I: [pulseaudio] core-util.c: Successfully gained nice level -11.
+I: [pulseaudio] main.c: Found user 'pulse' (UID 104) and group 'pulse' (GID 110).
+W: [pulseaudio] main.c: Home directory of user 'pulse' is not '/var/run/pulse', ignoring.
+I: [pulseaudio] main.c: Successfully changed user to "pulse".
+I: [pulseaudio] main.c: This is PulseAudio 16.1
+D: [pulseaudio] main.c: Compilation CFLAGS: Not yet supported on meson
+D: [pulseaudio] main.c: Running on host: Linux x86_64 6.1.0-31-amd64 #1 SMP PREEMPT_DYNAMIC Debian 6.1.128-1 (2025-02-07)
+D: [pulseaudio] main.c: Found 4 CPUs.
+I: [pulseaudio] main.c: Page size is 4096 bytes
+D: [pulseaudio] main.c: Compiled with Valgrind support: no
+D: [pulseaudio] main.c: Running in valgrind mode: no
+D: [pulseaudio] main.c: Running in VM: no
+D: [pulseaudio] main.c: Running from build tree: no
+D: [pulseaudio] main.c: Optimized build: yes
+D: [pulseaudio] main.c: All asserts enabled.
+I: [pulseaudio] main.c: Machine ID is 74342bde2f9e4d9dacf392afeea14e19.
+I: [pulseaudio] main.c: Session ID is 879.
+I: [pulseaudio] main.c: Using runtime directory /var/run/pulse.
+I: [pulseaudio] main.c: Using state directory /var/lib/pulse.
+I: [pulseaudio] main.c: Using modules directory /usr/lib/pulse-16.1+dfsg1/modules.
+I: [pulseaudio] main.c: Running in system mode: yes
+W: [pulseaudio] main.c: OK, so you are running PA in system mode. Please make sure that you actually do want to do that.
+W: [pulseaudio] main.c: Please read http://www.freedesktop.org/wiki/Software/PulseAudio/Documentation/User/WhatIsWrongWithSystemWide/ for an explanation why system mode is usually a bad idea.
+I: [pulseaudio] main.c: System supports high resolution timers
+D: [pulseaudio] memblock.c: Using private memory pool with 1024 slots of size 64.0 KiB each, total size is 64.0 MiB, maximum usable slot size is 65472
+I: [pulseaudio] cpu-x86.c: CPU flags: CMOV MMX SSE SSE2 SSE3 SSSE3 SSE4_1 SSE4_2 
+I: [pulseaudio] svolume_mmx.c: Initialising MMX optimized volume functions.
+I: [pulseaudio] remap_mmx.c: Initialising MMX optimized remappers.
+I: [pulseaudio] svolume_sse.c: Initialising SSE2 optimized volume functions.
+I: [pulseaudio] remap_sse.c: Initialising SSE2 optimized remappers.
+I: [pulseaudio] sconv_sse.c: Initialising SSE2 optimized conversions.
+I: [pulseaudio] svolume_orc.c: Initialising ORC optimized volume functions.
+D: [pulseaudio] database-tdb.c: Opened TDB database '/var/lib/pulse/74342bde2f9e4d9dacf392afeea14e19-device-volumes.tdb'
+I: [pulseaudio] database.c: Successfully opened 'device-volumes' database file '/var/lib/pulse/74342bde2f9e4d9dacf392afeea14e19-device-volumes.tdb'.
+I: [pulseaudio] module.c: Loaded "module-device-restore" (index: #0; argument: "").
+D: [pulseaudio] database-tdb.c: Opened TDB database '/var/lib/pulse/74342bde2f9e4d9dacf392afeea14e19-stream-volumes.tdb'
+I: [pulseaudio] database.c: Successfully opened 'stream-volumes' database file '/var/lib/pulse/74342bde2f9e4d9dacf392afeea14e19-stream-volumes.tdb'.
+D: [pulseaudio] protocol-dbus.c: Interface org.PulseAudio.Ext.StreamRestore1 added for object /org/pulseaudio/stream_restore1
+D: [pulseaudio] protocol-dbus.c: Interface org.PulseAudio.Ext.StreamRestore1.RestoreEntry added for object /org/pulseaudio/stream_restore1/entry0
+D: [pulseaudio] protocol-dbus.c: Interface org.PulseAudio.Ext.StreamRestore1.RestoreEntry added for object /org/pulseaudio/stream_restore1/entry1
+D: [pulseaudio] protocol-dbus.c: Interface org.PulseAudio.Ext.StreamRestore1.RestoreEntry added for object /org/pulseaudio/stream_restore1/entry2
+D: [pulseaudio] protocol-dbus.c: Interface org.PulseAudio.Ext.StreamRestore1.RestoreEntry added for object /org/pulseaudio/stream_restore1/entry3
+D: [pulseaudio] protocol-dbus.c: Interface org.PulseAudio.Ext.StreamRestore1.RestoreEntry added for object /org/pulseaudio/stream_restore1/entry4
+D: [pulseaudio] protocol-dbus.c: Interface org.PulseAudio.Ext.StreamRestore1.RestoreEntry added for object /org/pulseaudio/stream_restore1/entry5
+I: [pulseaudio] module.c: Loaded "module-stream-restore" (index: #1; argument: "").
+D: [pulseaudio] database-tdb.c: Opened TDB database '/var/lib/pulse/74342bde2f9e4d9dacf392afeea14e19-card-database.tdb'
+I: [pulseaudio] database.c: Successfully opened 'card-database' database file '/var/lib/pulse/74342bde2f9e4d9dacf392afeea14e19-card-database.tdb'.
+I: [pulseaudio] module.c: Loaded "module-card-restore" (index: #2; argument: "").
+D: [pulseaudio] module.c: Checking for existence of '/usr/lib/pulse-16.1+dfsg1/modules/module-udev-detect.so': success
+D: [pulseaudio] module-udev-detect.c: /dev/snd/controlC0 is accessible: yes
+D: [pulseaudio] module-udev-detect.c: /devices/pci0000:00/0000:00:0e.0/sound/card0 is busy: no
+D: [pulseaudio] module-udev-detect.c: Loading module-alsa-card with arguments 'device_id="0" name="pci-0000_00_0e.0" card_name="alsa_card.pci-0000_00_0e.0" namereg_fail=false tsched=yes fixed_latency_range=no ignore_dB=no deferred_volume=yes use_ucm=yes avoid_resampling=no card_properties="module-udev-detect.discovered=1"'
+I: [pulseaudio] (alsa-lib)parser.c: UCM is not supported for this HDA model (HDA Intel PCH at 0xa1210000 irq 132)
+I: [pulseaudio] (alsa-lib)main.c: error: failed to import hw:0 use case configuration -6
+I: [pulseaudio] (alsa-lib)parser.c: UCM is not supported for this HDA model (HDA Intel PCH at 0xa1210000 irq 132)
+I: [pulseaudio] (alsa-lib)main.c: error: failed to import HDA Intel PCH use case configuration -6
+I: [pulseaudio] alsa-ucm.c: UCM not available for card HDA Intel PCH
+D: [pulseaudio] conf-parser.c: Parsing configuration file '/usr/share/pulseaudio/alsa-mixer/profile-sets/default.conf'
+D: [pulseaudio] alsa-mixer.c: Looking at profile output:analog+input:analog
+D: [pulseaudio] alsa-mixer.c: Checking for playback on Analog Stereo (analog-stereo)
+D: [pulseaudio] alsa-util.c: Trying hw:CARD=PCH,DEV=0 with SND_PCM_NO_AUTO_FORMAT ...
+D: [pulseaudio] alsa-util.c: Managed to open hw:CARD=PCH,DEV=0
+D: [pulseaudio] alsa-util.c: Maximum hw buffer size is 23777 ms
+D: [pulseaudio] alsa-util.c: Set buffer size first (to 4408 samples), period size second (to 1102 samples).
+D: [pulseaudio] alsa-mixer.c: Checking for recording on Analog Stereo (analog-stereo)
+D: [pulseaudio] alsa-util.c: Trying hw:CARD=PCH,DEV=0 with SND_PCM_NO_AUTO_FORMAT ...
+D: [pulseaudio] alsa-util.c: Managed to open hw:CARD=PCH,DEV=0
+D: [pulseaudio] alsa-util.c: Maximum hw buffer size is 23777 ms
+D: [pulseaudio] alsa-util.c: Set buffer size first (to 4408 samples), period size second (to 1102 samples).
+D: [pulseaudio] alsa-mixer.c: Profile output:analog+input:analog supported.
+I: [pulseaudio] alsa-mixer.c: Loading path config: /usr/share//pulseaudio/alsa-mixer/paths/analog-output-lineout.conf
+D: [pulseaudio] conf-parser.c: Parsing configuration file '/usr/share//pulseaudio/alsa-mixer/paths/analog-output-lineout.conf'
+D: [pulseaudio] conf-parser.c: Parsing configuration file '/usr/share//pulseaudio/alsa-mixer/paths/analog-output.conf.common'
+I: [pulseaudio] alsa-mixer.c: Loading path config: /usr/share//pulseaudio/alsa-mixer/paths/analog-output-speaker.conf
+D: [pulseaudio] conf-parser.c: Parsing configuration file '/usr/share//pulseaudio/alsa-mixer/paths/analog-output-speaker.conf'
+D: [pulseaudio] conf-parser.c: Parsing configuration file '/usr/share//pulseaudio/alsa-mixer/paths/analog-output.conf.common'
+I: [pulseaudio] alsa-mixer.c: Loading path config: /usr/share//pulseaudio/alsa-mixer/paths/analog-output-headphones.conf
+D: [pulseaudio] conf-parser.c: Parsing configuration file '/usr/share//pulseaudio/alsa-mixer/paths/analog-output-headphones.conf'
+D: [pulseaudio] conf-parser.c: Parsing configuration file '/usr/share//pulseaudio/alsa-mixer/paths/analog-output.conf.common'
+I: [pulseaudio] alsa-util.c: Successfully attached to mixer 'hw:0'
+D: [pulseaudio] alsa-util.c: ALSA alias mixers: hw:0 = hw:PCH
+D: [pulseaudio] alsa-mixer.c: Probing path 'analog-output-lineout'
+D: [pulseaudio] alsa-mixer.c: Probe of jack 'Line Out Jack' succeeded (found!)
+D: [pulseaudio] alsa-mixer.c: Probe of jack 'Line Out Phantom Jack' succeeded (not found)
+D: [pulseaudio] alsa-mixer.c: Probe of jack 'Front Line Out Jack' succeeded (not found)
+D: [pulseaudio] alsa-mixer.c: Probe of jack 'Front Line Out Phantom Jack' succeeded (not found)
+D: [pulseaudio] alsa-mixer.c: Probe of jack 'Rear Line Out Jack' succeeded (not found)
+D: [pulseaudio] alsa-mixer.c: Probe of jack 'Rear Line Out Phantom Jack' succeeded (not found)
+D: [pulseaudio] alsa-mixer.c: Probe of jack 'Line Out Front Jack' succeeded (not found)
+D: [pulseaudio] alsa-mixer.c: Probe of jack 'Line Out Front Phantom Jack' succeeded (not found)
+D: [pulseaudio] alsa-mixer.c: Probe of jack 'Line Out CLFE Jack' succeeded (not found)
+D: [pulseaudio] alsa-mixer.c: Probe of jack 'Line Out CLFE Phantom Jack' succeeded (not found)
+D: [pulseaudio] alsa-mixer.c: Probe of jack 'Line Out Surround Jack' succeeded (not found)
+D: [pulseaudio] alsa-mixer.c: Probe of jack 'Line Out Surround Phantom Jack' succeeded (not found)
+D: [pulseaudio] alsa-mixer.c: Probe of jack 'Line Out Side Jack' succeeded (not found)
+D: [pulseaudio] alsa-mixer.c: Probe of jack 'Line Out Side Phantom Jack' succeeded (not found)
+D: [pulseaudio] alsa-mixer.c: Probe of jack 'Dock Line Out Jack' succeeded (not found)
+D: [pulseaudio] alsa-mixer.c: Probe of jack 'Dock Line Out Phantom Jack' succeeded (not found)
+D: [pulseaudio] alsa-mixer.c: Probe of element 'Hardware Master' succeeded (volume=0, switch=0, enumeration=0, has_dB=0).
+D: [pulseaudio] alsa-mixer.c: Probe of element 'Master' succeeded (volume=1, switch=1, enumeration=0, has_dB=1).
+D: [pulseaudio] alsa-mixer.c: Probe of element 'Speaker+LO' succeeded (volume=0, switch=0, enumeration=0, has_dB=0).
+D: [pulseaudio] alsa-mixer.c: Probe of element 'Headphone+LO' succeeded (volume=0, switch=0, enumeration=0, has_dB=0).
+D: [pulseaudio] alsa-mixer.c: Probe of element 'Master Mono' succeeded (volume=0, switch=0, enumeration=0, has_dB=0).
+D: [pulseaudio] alsa-mixer.c: Probe of element 'Line HP Swap' succeeded (volume=0, switch=0, enumeration=0, has_dB=0).
+D: [pulseaudio] alsa-mixer.c: Probe of element 'Headphone' succeeded (volume=2, switch=2, enumeration=0, has_dB=1).
+D: [pulseaudio] alsa-mixer.c: Probe of element 'Headphone',1 succeeded (volume=0, switch=0, enumeration=0, has_dB=0).
+D: [pulseaudio] alsa-mixer.c: Probe of element 'Headphone2' succeeded (volume=0, switch=0, enumeration=0, has_dB=0).
+D: [pulseaudio] alsa-mixer.c: Probe of element 'Speaker' succeeded (volume=2, switch=2, enumeration=0, has_dB=1).
+D: [pulseaudio] alsa-mixer.c: Probe of element 'Desktop Speaker' succeeded (volume=0, switch=0, enumeration=0, has_dB=0).
+D: [pulseaudio] alsa-mixer.c: Probe of element 'Front' succeeded (volume=0, switch=0, enumeration=0, has_dB=0).
+D: [pulseaudio] alsa-mixer.c: Probe of element 'Rear' succeeded (volume=0, switch=0, enumeration=0, has_dB=0).
+D: [pulseaudio] alsa-mixer.c: Probe of element 'Surround' succeeded (volume=0, switch=0, enumeration=0, has_dB=0).
+D: [pulseaudio] alsa-mixer.c: Probe of element 'Side' succeeded (volume=0, switch=0, enumeration=0, has_dB=0).
+D: [pulseaudio] alsa-mixer.c: Probe of element 'Center' succeeded (volume=0, switch=0, enumeration=0, has_dB=0).
+D: [pulseaudio] alsa-mixer.c: Probe of element 'LFE' succeeded (volume=0, switch=0, enumeration=0, has_dB=0).
+D: [pulseaudio] alsa-mixer.c: Probe of element 'CLFE' succeeded (volume=0, switch=0, enumeration=0, has_dB=0).
+D: [pulseaudio] alsa-mixer.c: Probe of element 'Center/LFE' succeeded (volume=0, switch=0, enumeration=0, has_dB=0).
+D: [pulseaudio] alsa-mixer.c: Probe of element 'Bass Speaker' succeeded (volume=0, switch=0, enumeration=0, has_dB=0).
+D: [pulseaudio] alsa-mixer.c: Probe of element 'Speaker Front' succeeded (volume=0, switch=0, enumeration=0, has_dB=0).
+D: [pulseaudio] alsa-mixer.c: Probe of element 'Speaker Surround' succeeded (volume=0, switch=0, enumeration=0, has_dB=0).
+D: [pulseaudio] alsa-mixer.c: Probe of element 'Speaker Side' succeeded (volume=0, switch=0, enumeration=0, has_dB=0).
+D: [pulseaudio] alsa-mixer.c: Probe of element 'Speaker CLFE' succeeded (volume=0, switch=0, enumeration=0, has_dB=0).
+D: [pulseaudio] alsa-mixer.c: Probe of element 'PCM' succeeded (volume=1, switch=0, enumeration=0, has_dB=1).
+D: [pulseaudio] alsa-mixer.c: Probe of element 'External Amplifier' succeeded (volume=0, switch=0, enumeration=0, has_dB=0).
+D: [pulseaudio] alsa-mixer.c: Probe of element 'Bass Boost' succeeded (volume=0, switch=0, enumeration=0, has_dB=0).
+D: [pulseaudio] alsa-mixer.c: Probe of element 'IEC958' succeeded (volume=0, switch=2, enumeration=0, has_dB=0).
+D: [pulseaudio] alsa-mixer.c: Probe of element 'IEC958 Optical Raw' succeeded (volume=0, switch=0, enumeration=0, has_dB=0).
+D: [pulseaudio] alsa-mixer.c: Probe of element 'Analog Output' succeeded (volume=0, switch=0, enumeration=0, has_dB=0).
+D: [pulseaudio] alsa-mixer.c: Probing path 'analog-output-speaker'
+D: [pulseaudio] alsa-mixer.c: Probe of jack 'Headphone Jack' succeeded (not found)
+D: [pulseaudio] alsa-mixer.c: Probe of jack 'Dock Headphone Jack' succeeded (not found)
+D: [pulseaudio] alsa-mixer.c: Probe of jack 'Front Headphone Jack' succeeded (found!)
+D: [pulseaudio] alsa-mixer.c: Probe of jack 'Line Out Jack' succeeded (found!)
+D: [pulseaudio] alsa-mixer.c: Probe of jack 'Line Out Front Jack' succeeded (not found)
+D: [pulseaudio] alsa-mixer.c: Probe of jack 'Front Line Out Jack' succeeded (not found)
+D: [pulseaudio] alsa-mixer.c: Probe of jack 'Rear Line Out Jack' succeeded (not found)
+D: [pulseaudio] alsa-mixer.c: Probe of jack 'Dock Line Out Jack' succeeded (not found)
+D: [pulseaudio] alsa-mixer.c: Probe of jack 'Speaker Jack' succeeded (not found)
+D: [pulseaudio] alsa-mixer.c: Probe of jack 'Speaker Phantom Jack' succeeded (found!)
+D: [pulseaudio] alsa-mixer.c: Probe of jack 'Speaker Front Phantom Jack' succeeded (not found)
+D: [pulseaudio] alsa-mixer.c: Probe of jack 'Speaker - Output Jack' succeeded (not found)
+D: [pulseaudio] alsa-mixer.c: Probe of element 'Hardware Master' succeeded (volume=0, switch=0, enumeration=0, has_dB=0).
+D: [pulseaudio] alsa-mixer.c: Probe of element 'Master' succeeded (volume=1, switch=1, enumeration=0, has_dB=1).
+D: [pulseaudio] alsa-mixer.c: Probe of element 'Master Mono' succeeded (volume=0, switch=0, enumeration=0, has_dB=0).
+D: [pulseaudio] alsa-mixer.c: Probe of element 'Auto-Mute Mode' succeeded (volume=0, switch=0, enumeration=1, has_dB=0).
+D: [pulseaudio] alsa-mixer.c: Probe of element 'Headphone' succeeded (volume=2, switch=2, enumeration=0, has_dB=1).
+D: [pulseaudio] alsa-mixer.c: Probe of element 'Headphone',1 succeeded (volume=0, switch=0, enumeration=0, has_dB=0).
+D: [pulseaudio] alsa-mixer.c: Probe of element 'Headphone2' succeeded (volume=0, switch=0, enumeration=0, has_dB=0).
+D: [pulseaudio] alsa-mixer.c: Probe of element 'Headphone+LO' succeeded (volume=0, switch=0, enumeration=0, has_dB=0).
+D: [pulseaudio] alsa-mixer.c: Probe of element 'Speaker+LO' succeeded (volume=0, switch=0, enumeration=0, has_dB=0).
+D: [pulseaudio] alsa-mixer.c: Probe of element 'Speaker' succeeded (volume=1, switch=1, enumeration=0, has_dB=1).
+D: [pulseaudio] alsa-mixer.c: Probe of element 'Desktop Speaker' succeeded (volume=0, switch=0, enumeration=0, has_dB=0).
+D: [pulseaudio] alsa-mixer.c: Probe of element 'Front' succeeded (volume=0, switch=0, enumeration=0, has_dB=0).
+D: [pulseaudio] alsa-mixer.c: Probe of element 'Front Speaker' succeeded (volume=0, switch=0, enumeration=0, has_dB=0).
+D: [pulseaudio] alsa-mixer.c: Probe of element 'Speaker Front' succeeded (volume=0, switch=0, enumeration=0, has_dB=0).
+D: [pulseaudio] alsa-mixer.c: Probe of element 'Rear' succeeded (volume=0, switch=0, enumeration=0, has_dB=0).
+D: [pulseaudio] alsa-mixer.c: Probe of element 'Surround' succeeded (volume=0, switch=0, enumeration=0, has_dB=0).
+D: [pulseaudio] alsa-mixer.c: Probe of element 'Surround Speaker' succeeded (volume=0, switch=0, enumeration=0, has_dB=0).
+D: [pulseaudio] alsa-mixer.c: Probe of element 'Speaker Surround' succeeded (volume=0, switch=0, enumeration=0, has_dB=0).
+D: [pulseaudio] alsa-mixer.c: Probe of element 'Side' succeeded (volume=0, switch=0, enumeration=0, has_dB=0).
+D: [pulseaudio] alsa-mixer.c: Probe of element 'Speaker Side' succeeded (volume=0, switch=0, enumeration=0, has_dB=0).
+D: [pulseaudio] alsa-mixer.c: Probe of element 'Center' succeeded (volume=0, switch=0, enumeration=0, has_dB=0).
+D: [pulseaudio] alsa-mixer.c: Probe of element 'Center Speaker' succeeded (volume=0, switch=0, enumeration=0, has_dB=0).
+D: [pulseaudio] alsa-mixer.c: Probe of element 'LFE' succeeded (volume=0, switch=0, enumeration=0, has_dB=0).
+D: [pulseaudio] alsa-mixer.c: Probe of element 'LFE Speaker' succeeded (volume=0, switch=0, enumeration=0, has_dB=0).
+D: [pulseaudio] alsa-mixer.c: Probe of element 'Bass Speaker' succeeded (volume=0, switch=0, enumeration=0, has_dB=0).
+D: [pulseaudio] alsa-mixer.c: Probe of element 'CLFE' succeeded (volume=0, switch=0, enumeration=0, has_dB=0).
+D: [pulseaudio] alsa-mixer.c: Probe of element 'Center/LFE' succeeded (volume=0, switch=0, enumeration=0, has_dB=0).
+D: [pulseaudio] alsa-mixer.c: Probe of element 'Speaker CLFE' succeeded (volume=0, switch=0, enumeration=0, has_dB=0).
+D: [pulseaudio] alsa-mixer.c: Probe of element 'PCM' succeeded (volume=1, switch=0, enumeration=0, has_dB=1).
+D: [pulseaudio] alsa-mixer.c: Probe of element 'External Amplifier' succeeded (volume=0, switch=0, enumeration=0, has_dB=0).
+D: [pulseaudio] alsa-mixer.c: Probe of element 'Bass Boost' succeeded (volume=0, switch=0, enumeration=0, has_dB=0).
+D: [pulseaudio] alsa-mixer.c: Probe of element 'IEC958' succeeded (volume=0, switch=2, enumeration=0, has_dB=0).
+D: [pulseaudio] alsa-mixer.c: Probe of element 'IEC958 Optical Raw' succeeded (volume=0, switch=0, enumeration=0, has_dB=0).
+D: [pulseaudio] alsa-mixer.c: Probe of element 'Analog Output' succeeded (volume=0, switch=0, enumeration=0, has_dB=0).
+D: [pulseaudio] alsa-mixer.c: Probing path 'analog-output-headphones'
+D: [pulseaudio] alsa-mixer.c: Probe of jack 'Dock Headphone Jack' succeeded (not found)
+D: [pulseaudio] alsa-mixer.c: Probe of jack 'Dock Headphone Phantom Jack' succeeded (not found)
+D: [pulseaudio] alsa-mixer.c: Probe of jack 'Front Headphone Jack' succeeded (found!)
+D: [pulseaudio] alsa-mixer.c: Probe of jack 'Front Headphone Front Jack' succeeded (not found)
+D: [pulseaudio] alsa-mixer.c: Probe of jack 'Front Headphone Phantom Jack' succeeded (not found)
+D: [pulseaudio] alsa-mixer.c: Probe of jack 'Headphone Jack' succeeded (not found)
+D: [pulseaudio] alsa-mixer.c: Probe of jack 'Headphone Phantom Jack' succeeded (not found)
+D: [pulseaudio] alsa-mixer.c: Probe of jack 'Headphone Mic Jack' succeeded (not found)
+D: [pulseaudio] alsa-mixer.c: Probe of jack 'Headphone - Output Jack' succeeded (not found)
+D: [pulseaudio] alsa-mixer.c: Probe of element 'Hardware Master' succeeded (volume=0, switch=0, enumeration=0, has_dB=0).
+D: [pulseaudio] alsa-mixer.c: Probe of element 'Master' succeeded (volume=1, switch=1, enumeration=0, has_dB=1).
+D: [pulseaudio] alsa-mixer.c: Probe of element 'Master Mono' succeeded (volume=0, switch=0, enumeration=0, has_dB=0).
+D: [pulseaudio] alsa-mixer.c: Probe of element 'Speaker+LO' succeeded (volume=0, switch=0, enumeration=0, has_dB=0).
+D: [pulseaudio] alsa-mixer.c: Probe of element 'Headphone+LO' succeeded (volume=0, switch=0, enumeration=0, has_dB=0).
+D: [pulseaudio] alsa-mixer.c: Probe of element 'Headphone' succeeded (volume=1, switch=1, enumeration=0, has_dB=1).
+D: [pulseaudio] alsa-mixer.c: Probe of element 'Headphone',1 succeeded (volume=0, switch=0, enumeration=0, has_dB=0).
+D: [pulseaudio] alsa-mixer.c: Probe of element 'Headset' succeeded (volume=0, switch=0, enumeration=0, has_dB=0).
+D: [pulseaudio] alsa-mixer.c: Probe of element 'Line HP Swap' succeeded (volume=0, switch=0, enumeration=0, has_dB=0).
+D: [pulseaudio] alsa-mixer.c: Probe of element 'Headphone2' succeeded (volume=0, switch=0, enumeration=0, has_dB=0).
+D: [pulseaudio] alsa-mixer.c: Probe of element 'Speaker' succeeded (volume=2, switch=2, enumeration=0, has_dB=1).
+D: [pulseaudio] alsa-mixer.c: Probe of element 'Desktop Speaker' succeeded (volume=0, switch=0, enumeration=0, has_dB=0).
+D: [pulseaudio] alsa-mixer.c: Probe of element 'Front' succeeded (volume=0, switch=0, enumeration=0, has_dB=0).
+D: [pulseaudio] alsa-mixer.c: Probe of element 'Rear' succeeded (volume=0, switch=0, enumeration=0, has_dB=0).
+D: [pulseaudio] alsa-mixer.c: Probe of element 'Surround' succeeded (volume=0, switch=0, enumeration=0, has_dB=0).
+D: [pulseaudio] alsa-mixer.c: Probe of element 'Side' succeeded (volume=0, switch=0, enumeration=0, has_dB=0).
+D: [pulseaudio] alsa-mixer.c: Probe of element 'Center' succeeded (volume=0, switch=0, enumeration=0, has_dB=0).
+D: [pulseaudio] alsa-mixer.c: Probe of element 'LFE' succeeded (volume=0, switch=0, enumeration=0, has_dB=0).
+D: [pulseaudio] alsa-mixer.c: Probe of element 'Bass Speaker' succeeded (volume=0, switch=0, enumeration=0, has_dB=0).
+D: [pulseaudio] alsa-mixer.c: Probe of element 'Speaker Front' succeeded (volume=0, switch=0, enumeration=0, has_dB=0).
+D: [pulseaudio] alsa-mixer.c: Probe of element 'Speaker Surround' succeeded (volume=0, switch=0, enumeration=0, has_dB=0).
+D: [pulseaudio] alsa-mixer.c: Probe of element 'Speaker Side' succeeded (volume=0, switch=0, enumeration=0, has_dB=0).
+D: [pulseaudio] alsa-mixer.c: Probe of element 'Speaker CLFE' succeeded (volume=0, switch=0, enumeration=0, has_dB=0).
+D: [pulseaudio] alsa-mixer.c: Probe of element 'Speaker Center/LFE' succeeded (volume=0, switch=0, enumeration=0, has_dB=0).
+D: [pulseaudio] alsa-mixer.c: Probe of element 'PCM' succeeded (volume=1, switch=0, enumeration=0, has_dB=1).
+D: [pulseaudio] alsa-mixer.c: Probe of element 'External Amplifier' succeeded (volume=0, switch=0, enumeration=0, has_dB=0).
+D: [pulseaudio] alsa-mixer.c: Probe of element 'Bass Boost' succeeded (volume=0, switch=0, enumeration=0, has_dB=0).
+D: [pulseaudio] alsa-mixer.c: Probe of element 'IEC958' succeeded (volume=0, switch=2, enumeration=0, has_dB=0).
+D: [pulseaudio] alsa-mixer.c: Probe of element 'IEC958 Optical Raw' succeeded (volume=0, switch=0, enumeration=0, has_dB=0).
+D: [pulseaudio] alsa-mixer.c: Probe of element 'Analog Output' succeeded (volume=0, switch=0, enumeration=0, has_dB=0).
+D: [pulseaudio] alsa-mixer.c: Available mixer paths (after tidying):
+D: [pulseaudio] alsa-mixer.c: Path Set 0x55632d539da0, direction=1
+D: [pulseaudio] alsa-mixer.c: Path analog-output-lineout (Line Out), direction=1, priority=90, probed=yes, supported=yes, has_mute=yes, has_volume=yes, has_dB=yes, min_volume=0, max_volume=87, min_dB=-116.25, max_dB=0
+D: [pulseaudio] alsa-mixer.c: Element 'Master', direction=1, switch=1, volume=1, volume_limit=-1, enumeration=0, required=0, required_any=0, required_absent=0, mask=0x7ffffffffffff, n_channels=1, override_map=03
+D: [pulseaudio] alsa-mixer.c: Element 'Headphone', direction=1, switch=2, volume=2, volume_limit=-1, enumeration=0, required=0, required_any=0, required_absent=0, mask=0x6, n_channels=2, override_map=00
+D: [pulseaudio] alsa-mixer.c: Element 'Speaker', direction=1, switch=2, volume=2, volume_limit=-1, enumeration=0, required=0, required_any=0, required_absent=0, mask=0x6, n_channels=2, override_map=00
+D: [pulseaudio] alsa-mixer.c: Element 'PCM', direction=1, switch=0, volume=1, volume_limit=-1, enumeration=0, required=0, required_any=0, required_absent=0, mask=0x3600000000f66, n_channels=2, override_map=03
+D: [pulseaudio] alsa-mixer.c: Element 'IEC958', direction=1, switch=2, volume=0, volume_limit=-1, enumeration=0, required=0, required_any=0, required_absent=0, mask=0x0, n_channels=0, override_map=00
+D: [pulseaudio] alsa-mixer.c: Jack Line Out, alsa_name='Line Out Jack', index='0', detection possible
+D: [pulseaudio] alsa-mixer.c: Jack Line Out Phantom, alsa_name='Line Out Phantom Jack', index='0', detection unavailable
+D: [pulseaudio] alsa-mixer.c: Jack Front Line Out, alsa_name='Front Line Out Jack', index='0', detection unavailable
+D: [pulseaudio] alsa-mixer.c: Jack Front Line Out Phantom, alsa_name='Front Line Out Phantom Jack', index='0', detection unavailable
+D: [pulseaudio] alsa-mixer.c: Jack Rear Line Out, alsa_name='Rear Line Out Jack', index='0', detection unavailable
+D: [pulseaudio] alsa-mixer.c: Jack Rear Line Out Phantom, alsa_name='Rear Line Out Phantom Jack', index='0', detection unavailable
+D: [pulseaudio] alsa-mixer.c: Jack Line Out Front, alsa_name='Line Out Front Jack', index='0', detection unavailable
+D: [pulseaudio] alsa-mixer.c: Jack Line Out Front Phantom, alsa_name='Line Out Front Phantom Jack', index='0', detection unavailable
+D: [pulseaudio] alsa-mixer.c: Jack Line Out CLFE, alsa_name='Line Out CLFE Jack', index='0', detection unavailable
+D: [pulseaudio] alsa-mixer.c: Jack Line Out CLFE Phantom, alsa_name='Line Out CLFE Phantom Jack', index='0', detection unavailable
+D: [pulseaudio] alsa-mixer.c: Jack Line Out Surround, alsa_name='Line Out Surround Jack', index='0', detection unavailable
+D: [pulseaudio] alsa-mixer.c: Jack Line Out Surround Phantom, alsa_name='Line Out Surround Phantom Jack', index='0', detection unavailable
+D: [pulseaudio] alsa-mixer.c: Jack Line Out Side, alsa_name='Line Out Side Jack', index='0', detection unavailable
+D: [pulseaudio] alsa-mixer.c: Jack Line Out Side Phantom, alsa_name='Line Out Side Phantom Jack', index='0', detection unavailable
+D: [pulseaudio] alsa-mixer.c: Jack Dock Line Out, alsa_name='Dock Line Out Jack', index='0', detection unavailable
+D: [pulseaudio] alsa-mixer.c: Jack Dock Line Out Phantom, alsa_name='Dock Line Out Phantom Jack', index='0', detection unavailable
+D: [pulseaudio] alsa-mixer.c: Path analog-output-speaker (Speakers), direction=1, priority=100, probed=yes, supported=yes, has_mute=yes, has_volume=yes, has_dB=yes, min_volume=0, max_volume=87, min_dB=-181.5, max_dB=0
+D: [pulseaudio] alsa-mixer.c: Element 'Master', direction=1, switch=1, volume=1, volume_limit=-1, enumeration=0, required=0, required_any=0, required_absent=0, mask=0x7ffffffffffff, n_channels=1, override_map=03
+D: [pulseaudio] alsa-mixer.c: Element 'Auto-Mute Mode', direction=1, switch=0, volume=0, volume_limit=-1, enumeration=1, required=0, required_any=0, required_absent=0, mask=0x0, n_channels=0, override_map=00
+D: [pulseaudio] alsa-mixer.c: Option Disabled (analog-output-speaker/analog-output-speaker) index=0, priority=0
+D: [pulseaudio] alsa-mixer.c: Element 'Headphone', direction=1, switch=2, volume=2, volume_limit=-1, enumeration=0, required=0, required_any=0, required_absent=0, mask=0x6, n_channels=2, override_map=00
+D: [pulseaudio] alsa-mixer.c: Element 'Speaker', direction=1, switch=1, volume=1, volume_limit=-1, enumeration=0, required=0, required_any=4, required_absent=0, mask=0x3600000000f66, n_channels=2, override_map=03
+D: [pulseaudio] alsa-mixer.c: Element 'PCM', direction=1, switch=0, volume=1, volume_limit=-1, enumeration=0, required=0, required_any=0, required_absent=0, mask=0x3600000000f66, n_channels=2, override_map=03
+D: [pulseaudio] alsa-mixer.c: Element 'IEC958', direction=1, switch=2, volume=0, volume_limit=-1, enumeration=0, required=0, required_any=0, required_absent=0, mask=0x0, n_channels=0, override_map=00
+D: [pulseaudio] alsa-mixer.c: Jack Headphone, alsa_name='Headphone Jack', index='0', detection unavailable
+D: [pulseaudio] alsa-mixer.c: Jack Dock Headphone, alsa_name='Dock Headphone Jack', index='0', detection unavailable
+D: [pulseaudio] alsa-mixer.c: Jack Front Headphone, alsa_name='Front Headphone Jack', index='0', detection possible
+D: [pulseaudio] alsa-mixer.c: Jack Line Out, alsa_name='Line Out Jack', index='0', detection possible
+D: [pulseaudio] alsa-mixer.c: Jack Line Out Front, alsa_name='Line Out Front Jack', index='0', detection unavailable
+D: [pulseaudio] alsa-mixer.c: Jack Front Line Out, alsa_name='Front Line Out Jack', index='0', detection unavailable
+D: [pulseaudio] alsa-mixer.c: Jack Rear Line Out, alsa_name='Rear Line Out Jack', index='0', detection unavailable
+D: [pulseaudio] alsa-mixer.c: Jack Dock Line Out, alsa_name='Dock Line Out Jack', index='0', detection unavailable
+D: [pulseaudio] alsa-mixer.c: Jack Speaker, alsa_name='Speaker Jack', index='0', detection unavailable
+D: [pulseaudio] alsa-mixer.c: Jack Speaker Phantom, alsa_name='Speaker Phantom Jack', index='0', detection possible
+D: [pulseaudio] alsa-mixer.c: Jack Speaker Front Phantom, alsa_name='Speaker Front Phantom Jack', index='0', detection unavailable
+D: [pulseaudio] alsa-mixer.c: Jack Speaker - Output, alsa_name='Speaker - Output Jack', index='0', detection unavailable
+D: [pulseaudio] alsa-mixer.c: Setting analog-output-speaker (analog-output-speaker) priority=0
+D: [pulseaudio] alsa-mixer.c: Path analog-output-headphones (Headphones), direction=1, priority=99, probed=yes, supported=yes, has_mute=yes, has_volume=yes, has_dB=yes, min_volume=0, max_volume=87, min_dB=-181.5, max_dB=0
+D: [pulseaudio] alsa-mixer.c: Element 'Master', direction=1, switch=1, volume=1, volume_limit=-1, enumeration=0, required=0, required_any=0, required_absent=0, mask=0x7ffffffffffff, n_channels=1, override_map=03
+D: [pulseaudio] alsa-mixer.c: Element 'Headphone', direction=1, switch=1, volume=1, volume_limit=-1, enumeration=0, required=0, required_any=4, required_absent=0, mask=0x3600000000f66, n_channels=2, override_map=03
+D: [pulseaudio] alsa-mixer.c: Element 'Speaker', direction=1, switch=2, volume=2, volume_limit=-1, enumeration=0, required=0, required_any=0, required_absent=0, mask=0x6, n_channels=2, override_map=00
+D: [pulseaudio] alsa-mixer.c: Element 'PCM', direction=1, switch=0, volume=1, volume_limit=-1, enumeration=0, required=0, required_any=0, required_absent=0, mask=0x3600000000f66, n_channels=2, override_map=03
+D: [pulseaudio] alsa-mixer.c: Element 'IEC958', direction=1, switch=2, volume=0, volume_limit=-1, enumeration=0, required=0, required_any=0, required_absent=0, mask=0x0, n_channels=0, override_map=00
+D: [pulseaudio] alsa-mixer.c: Jack Dock Headphone, alsa_name='Dock Headphone Jack', index='0', detection unavailable
+D: [pulseaudio] alsa-mixer.c: Jack Dock Headphone Phantom, alsa_name='Dock Headphone Phantom Jack', index='0', detection unavailable
+D: [pulseaudio] alsa-mixer.c: Jack Front Headphone, alsa_name='Front Headphone Jack', index='0', detection possible
+D: [pulseaudio] alsa-mixer.c: Jack Front Headphone Front, alsa_name='Front Headphone Front Jack', index='0', detection unavailable
+D: [pulseaudio] alsa-mixer.c: Jack Front Headphone Phantom, alsa_name='Front Headphone Phantom Jack', index='0', detection unavailable
+D: [pulseaudio] alsa-mixer.c: Jack Headphone, alsa_name='Headphone Jack', index='0', detection unavailable
+D: [pulseaudio] alsa-mixer.c: Jack Headphone Phantom, alsa_name='Headphone Phantom Jack', index='0', detection unavailable
+D: [pulseaudio] alsa-mixer.c: Jack Headphone Mic, alsa_name='Headphone Mic Jack', index='0', detection unavailable
+D: [pulseaudio] alsa-mixer.c: Jack Headphone - Output, alsa_name='Headphone - Output Jack', index='0', detection unavailable
+I: [pulseaudio] alsa-mixer.c: Loading path config: /usr/share//pulseaudio/alsa-mixer/paths/analog-input-linein.conf
+D: [pulseaudio] conf-parser.c: Parsing configuration file '/usr/share//pulseaudio/alsa-mixer/paths/analog-input-linein.conf'
+D: [pulseaudio] alsa-mixer.c: Probing path 'analog-input-linein'
+D: [pulseaudio] alsa-mixer.c: Probe of jack 'Line Jack' succeeded (found!)
+D: [pulseaudio] alsa-mixer.c: Probe of jack 'Line Phantom Jack' succeeded (not found)
+D: [pulseaudio] alsa-mixer.c: Probe of jack 'Line - Input Jack' succeeded (not found)
+D: [pulseaudio] alsa-mixer.c: Probe of element 'Capture' succeeded (volume=1, switch=1, enumeration=0, has_dB=1).
+D: [pulseaudio] alsa-mixer.c: Probe of element 'Line Boost' succeeded (volume=1, switch=0, enumeration=0, has_dB=1).
+D: [pulseaudio] alsa-mixer.c: Probe of element 'Line' succeeded (volume=0, switch=0, enumeration=0, has_dB=0).
+D: [pulseaudio] alsa-mixer.c: Probe of element 'Input Source' succeeded (volume=0, switch=0, enumeration=1, has_dB=0).
+D: [pulseaudio] alsa-mixer.c: Probe of element 'Capture Source' succeeded (volume=0, switch=0, enumeration=0, has_dB=0).
+D: [pulseaudio] alsa-mixer.c: Probe of element 'PCM Capture Source' succeeded (volume=0, switch=0, enumeration=0, has_dB=0).
+D: [pulseaudio] alsa-mixer.c: Probe of element 'Mic' succeeded (volume=0, switch=0, enumeration=0, has_dB=0).
+D: [pulseaudio] alsa-mixer.c: Probe of element 'Dock Mic' succeeded (volume=0, switch=0, enumeration=0, has_dB=0).
+D: [pulseaudio] alsa-mixer.c: Probe of element 'Internal Mic' succeeded (volume=0, switch=0, enumeration=0, has_dB=0).
+D: [pulseaudio] alsa-mixer.c: Probe of element 'Front Mic' succeeded (volume=0, switch=0, enumeration=0, has_dB=0).
+D: [pulseaudio] alsa-mixer.c: Probe of element 'Rear Mic' succeeded (volume=0, switch=0, enumeration=0, has_dB=0).
+D: [pulseaudio] alsa-mixer.c: Probe of element 'Mic Boost' succeeded (volume=2, switch=0, enumeration=0, has_dB=1).
+D: [pulseaudio] alsa-mixer.c: Probe of element 'Dock Mic Boost' succeeded (volume=0, switch=0, enumeration=0, has_dB=0).
+D: [pulseaudio] alsa-mixer.c: Probe of element 'Internal Mic Boost' succeeded (volume=0, switch=0, enumeration=0, has_dB=0).
+D: [pulseaudio] alsa-mixer.c: Probe of element 'Front Mic Boost' succeeded (volume=0, switch=0, enumeration=0, has_dB=0).
+D: [pulseaudio] alsa-mixer.c: Probe of element 'Rear Mic Boost' succeeded (volume=0, switch=0, enumeration=0, has_dB=0).
+D: [pulseaudio] alsa-mixer.c: Probe of element 'Aux' succeeded (volume=0, switch=0, enumeration=0, has_dB=0).
+D: [pulseaudio] alsa-mixer.c: Probe of element 'Video' succeeded (volume=0, switch=0, enumeration=0, has_dB=0).
+D: [pulseaudio] alsa-mixer.c: Probe of element 'Mic/Line' succeeded (volume=0, switch=0, enumeration=0, has_dB=0).
+D: [pulseaudio] alsa-mixer.c: Probe of element 'TV Tuner' succeeded (volume=0, switch=0, enumeration=0, has_dB=0).
+D: [pulseaudio] alsa-mixer.c: Probe of element 'FM' succeeded (volume=0, switch=0, enumeration=0, has_dB=0).
+D: [pulseaudio] alsa-mixer.c: Probe of element 'Mic Jack Mode' succeeded (volume=0, switch=0, enumeration=0, has_dB=0).
+D: [pulseaudio] alsa-mixer.c: Available mixer paths (after tidying):
+D: [pulseaudio] alsa-mixer.c: Path Set 0x55632d551840, direction=2
+D: [pulseaudio] alsa-mixer.c: Path analog-input-linein (Line In), direction=2, priority=81, probed=yes, supported=yes, has_mute=yes, has_volume=yes, has_dB=yes, min_volume=0, max_volume=31, min_dB=-16.5, max_dB=66
+D: [pulseaudio] alsa-mixer.c: Element 'Capture', direction=2, switch=1, volume=1, volume_limit=-1, enumeration=0, required=0, required_any=0, required_absent=0, mask=0x3600000000f66, n_channels=2, override_map=03
+D: [pulseaudio] alsa-mixer.c: Element 'Line Boost', direction=2, switch=0, volume=1, volume_limit=-1, enumeration=0, required=0, required_any=4, required_absent=0, mask=0x3600000000f66, n_channels=2, override_map=03
+D: [pulseaudio] alsa-mixer.c: Element 'Input Source', direction=2, switch=0, volume=0, volume_limit=-1, enumeration=1, required=0, required_any=0, required_absent=0, mask=0x0, n_channels=0, override_map=00
+D: [pulseaudio] alsa-mixer.c: Option Line (analog-input-linein/analog-input-linein) index=1, priority=0
+D: [pulseaudio] alsa-mixer.c: Element 'Mic Boost', direction=2, switch=0, volume=2, volume_limit=-1, enumeration=0, required=0, required_any=0, required_absent=0, mask=0x6, n_channels=2, override_map=00
+D: [pulseaudio] alsa-mixer.c: Jack Line, alsa_name='Line Jack', index='0', detection possible
+D: [pulseaudio] alsa-mixer.c: Jack Line Phantom, alsa_name='Line Phantom Jack', index='0', detection unavailable
+D: [pulseaudio] alsa-mixer.c: Jack Line - Input, alsa_name='Line - Input Jack', index='0', detection unavailable
+D: [pulseaudio] alsa-mixer.c: Setting analog-input-linein (analog-input-linein) priority=0
+D: [pulseaudio] alsa-mixer.c: Profile set 0x55632d53c140, auto_profiles=no, probed=yes, n_mappings=1, n_profiles=1, n_decibel_fixes=0
+D: [pulseaudio] alsa-mixer.c: Mapping analog-stereo (Analog Stereo), priority=65, channel_map=front-left,front-right, supported=yes, direction=0
+D: [pulseaudio] alsa-mixer.c: Profile output:analog+input:analog (test123), input=(null), output=(null) priority=0, supported=yes n_input_mappings=1, n_output_mappings=1
+D: [pulseaudio] alsa-mixer.c: Input analog-stereo
+D: [pulseaudio] alsa-mixer.c: Output analog-stereo
+D: [pulseaudio] module-alsa-card.c: Pruned singleton availability group Legacy 2 from port analog-output-lineout
+D: [pulseaudio] module-alsa-card.c: Pruned singleton availability group Legacy 3 from port analog-output-speaker
+D: [pulseaudio] module-alsa-card.c: Pruned singleton availability group Legacy 4 from port analog-output-headphones
+D: [pulseaudio] module-alsa-card.c: Pruned singleton availability group Legacy 1 from port analog-input-linein
+I: [pulseaudio] module-card-restore.c: Restoring port latency offsets for card alsa_card.pci-0000_00_0e.0.
+D: [pulseaudio] module-alsa-card.c: Found 6 jacks.
+D: [pulseaudio] module-alsa-card.c: Jack 'Line Out Jack' is now plugged in
+D: [pulseaudio] device-port.c: Setting port analog-output-lineout to status yes
+D: [pulseaudio] module-alsa-card.c: Jack 'Front Headphone Jack' is now unplugged
+D: [pulseaudio] module-alsa-card.c: Jack 'Line Out Jack' is now plugged in
+D: [pulseaudio] device-port.c: Setting port analog-output-speaker to status no
+D: [pulseaudio] module-alsa-card.c: Jack 'Speaker Phantom Jack' is now plugged in
+D: [pulseaudio] module-alsa-card.c: Jack 'Front Headphone Jack' is now unplugged
+D: [pulseaudio] device-port.c: Setting port analog-output-headphones to status no
+D: [pulseaudio] module-alsa-card.c: Jack 'Line Jack' is now plugged in
+D: [pulseaudio] device-port.c: Setting port analog-input-linein to status yes
+D: [pulseaudio] card.c: Looking for initial profile for card alsa_card.pci-0000_00_0e.0
+D: [pulseaudio] card.c: output:analog+input:analog availability unknown
+D: [pulseaudio] card.c: off availability unknown
+I: [pulseaudio] card.c: alsa_card.pci-0000_00_0e.0: active_profile: output:analog+input:analog
+I: [pulseaudio] module-card-restore.c: Profile 'output:analog-stereo+input:analog-stereo' was previously automatically selected for card alsa_card.pci-0000_00_0e.0.
+D: [pulseaudio] module-card-restore.c: Tried to restore profile output:analog-stereo+input:analog-stereo for card alsa_card.pci-0000_00_0e.0, but the card doesn't have such profile.
+I: [pulseaudio] card.c: Created 0 "alsa_card.pci-0000_00_0e.0"
+D: [pulseaudio] alsa-util.c: Trying hw:CARD=PCH,DEV=0 with SND_PCM_NO_AUTO_FORMAT ...
+D: [pulseaudio] alsa-util.c: Managed to open hw:CARD=PCH,DEV=0
+I: [pulseaudio] alsa-util.c: Trying to disable ALSA period wakeups, using timers only
+D: [pulseaudio] alsa-util.c: Maximum hw buffer size is 23777 ms
+D: [pulseaudio] alsa-util.c: Set buffer size first (to 88200 samples), period size second (to 88200 samples).
+I: [pulseaudio] alsa-util.c: ALSA period wakeups disabled
+I: [pulseaudio] alsa-sink.c: Successfully opened device hw:CARD=PCH,DEV=0.
+I: [pulseaudio] alsa-sink.c: Selected mapping 'Analog Stereo' (analog-stereo).
+I: [pulseaudio] alsa-sink.c: Successfully enabled mmap() mode.
+I: [pulseaudio] alsa-sink.c: Successfully enabled timer-based scheduling mode.
+I: [pulseaudio] alsa-util.c: Successfully attached to mixer 'hw:0'
+D: [pulseaudio] alsa-util.c: ALSA alias mixers: hw:0 = hw:PCH
+D: [pulseaudio] alsa-mixer.c: Added 3 ports
+I: [pulseaudio] module-device-restore.c: Restoring volume for sink alsa_output.pci-0000_00_0e.0.analog-stereo: front-left: 56752 /  87%,   front-right: 56752 /  87%
+I: [pulseaudio] sink.c: Created sink 0 "alsa_output.pci-0000_00_0e.0.analog-stereo" with sample spec s16le 2ch 44100Hz and channel map front-left,front-right
+I: [pulseaudio] sink.c:     alsa.resolution_bits = "16"
+I: [pulseaudio] sink.c:     device.api = "alsa"
+I: [pulseaudio] sink.c:     device.class = "sound"
+I: [pulseaudio] sink.c:     alsa.class = "generic"
+I: [pulseaudio] sink.c:     alsa.subclass = "generic-mix"
+I: [pulseaudio] sink.c:     alsa.name = "ALC671 Analog"
+I: [pulseaudio] sink.c:     alsa.id = "ALC671 Analog"
+I: [pulseaudio] sink.c:     alsa.subdevice = "0"
+I: [pulseaudio] sink.c:     alsa.subdevice_name = "subdevice #0"
+I: [pulseaudio] sink.c:     alsa.device = "0"
+I: [pulseaudio] sink.c:     alsa.card = "0"
+I: [pulseaudio] sink.c:     alsa.card_name = "HDA Intel PCH"
+I: [pulseaudio] sink.c:     alsa.long_card_name = "HDA Intel PCH at 0xa1210000 irq 132"
+I: [pulseaudio] sink.c:     alsa.driver_name = "snd_hda_intel"
+I: [pulseaudio] sink.c:     device.bus_path = "pci-0000:00:0e.0"
+I: [pulseaudio] sink.c:     sysfs.path = "/devices/pci0000:00/0000:00:0e.0/sound/card0"
+I: [pulseaudio] sink.c:     device.bus = "pci"
+I: [pulseaudio] sink.c:     device.vendor.id = "8086"
+I: [pulseaudio] sink.c:     device.vendor.name = "Intel Corporation"
+I: [pulseaudio] sink.c:     device.product.id = "3198"
+I: [pulseaudio] sink.c:     device.product.name = "Celeron/Pentium Silver Processor High Definition Audio"
+I: [pulseaudio] sink.c:     device.form_factor = "internal"
+I: [pulseaudio] sink.c:     device.string = "hw:CARD=PCH,DEV=0"
+I: [pulseaudio] sink.c:     device.buffering.buffer_size = "352800"
+I: [pulseaudio] sink.c:     device.buffering.fragment_size = "176400"
+I: [pulseaudio] sink.c:     device.access_mode = "mmap+timer"
+I: [pulseaudio] sink.c:     device.profile.name = "analog-stereo"
+I: [pulseaudio] sink.c:     device.profile.description = "Analog Stereo"
+I: [pulseaudio] sink.c:     device.description = "Built-in Audio Analog Stereo"
+I: [pulseaudio] sink.c:     module-udev-detect.discovered = "1"
+I: [pulseaudio] sink.c:     device.icon_name = "audio-card-pci"
+I: [pulseaudio] source.c: Created source 0 "alsa_output.pci-0000_00_0e.0.analog-stereo.monitor" with sample spec s16le 2ch 44100Hz and channel map front-left,front-right
+I: [pulseaudio] source.c:     device.description = "Monitor of Built-in Audio Analog Stereo"
+I: [pulseaudio] source.c:     device.class = "monitor"
+I: [pulseaudio] source.c:     alsa.card = "0"
+I: [pulseaudio] source.c:     alsa.card_name = "HDA Intel PCH"
+I: [pulseaudio] source.c:     alsa.long_card_name = "HDA Intel PCH at 0xa1210000 irq 132"
+I: [pulseaudio] source.c:     alsa.driver_name = "snd_hda_intel"
+I: [pulseaudio] source.c:     device.bus_path = "pci-0000:00:0e.0"
+I: [pulseaudio] source.c:     sysfs.path = "/devices/pci0000:00/0000:00:0e.0/sound/card0"
+I: [pulseaudio] source.c:     device.bus = "pci"
+I: [pulseaudio] source.c:     device.vendor.id = "8086"
+I: [pulseaudio] source.c:     device.vendor.name = "Intel Corporation"
+I: [pulseaudio] source.c:     device.product.id = "3198"
+I: [pulseaudio] source.c:     device.product.name = "Celeron/Pentium Silver Processor High Definition Audio"
+I: [pulseaudio] source.c:     device.form_factor = "internal"
+I: [pulseaudio] source.c:     device.string = "0"
+I: [pulseaudio] source.c:     module-udev-detect.discovered = "1"
+I: [pulseaudio] source.c:     device.icon_name = "audio-card-pci"
+I: [pulseaudio] alsa-sink.c: Using 2.0 fragments of size 176400 bytes (1000.00ms), buffer size is 352800 bytes (2000.00ms)
+I: [pulseaudio] alsa-sink.c: Time scheduling watermark is 20.00ms
+D: [pulseaudio] alsa-sink.c: hwbuf_unused=0
+D: [pulseaudio] alsa-sink.c: setting avail_min=87319
+D: [pulseaudio] alsa-mixer.c: Activating path analog-output-lineout
+D: [pulseaudio] alsa-mixer.c: Path analog-output-lineout (Line Out), direction=1, priority=90, probed=yes, supported=yes, has_mute=yes, has_volume=yes, has_dB=yes, min_volume=0, max_volume=87, min_dB=-116.25, max_dB=0
+D: [pulseaudio] alsa-mixer.c: Element 'Master', direction=1, switch=1, volume=1, volume_limit=-1, enumeration=0, required=0, required_any=0, required_absent=0, mask=0x7ffffffffffff, n_channels=1, override_map=03
+D: [pulseaudio] alsa-mixer.c: Element 'Headphone', direction=1, switch=2, volume=2, volume_limit=-1, enumeration=0, required=0, required_any=0, required_absent=0, mask=0x6, n_channels=2, override_map=00
+D: [pulseaudio] alsa-mixer.c: Element 'Speaker', direction=1, switch=2, volume=2, volume_limit=-1, enumeration=0, required=0, required_any=0, required_absent=0, mask=0x6, n_channels=2, override_map=00
+D: [pulseaudio] alsa-mixer.c: Element 'PCM', direction=1, switch=0, volume=1, volume_limit=-1, enumeration=0, required=0, required_any=0, required_absent=0, mask=0x3600000000f66, n_channels=2, override_map=03
+D: [pulseaudio] alsa-mixer.c: Element 'IEC958', direction=1, switch=2, volume=0, volume_limit=-1, enumeration=0, required=0, required_any=0, required_absent=0, mask=0x0, n_channels=0, override_map=00
+D: [pulseaudio] alsa-mixer.c: Jack Line Out, alsa_name='Line Out Jack', index='0', detection possible
+D: [pulseaudio] alsa-mixer.c: Jack Line Out Phantom, alsa_name='Line Out Phantom Jack', index='0', detection unavailable
+D: [pulseaudio] alsa-mixer.c: Jack Front Line Out, alsa_name='Front Line Out Jack', index='0', detection unavailable
+D: [pulseaudio] alsa-mixer.c: Jack Front Line Out Phantom, alsa_name='Front Line Out Phantom Jack', index='0', detection unavailable
+D: [pulseaudio] alsa-mixer.c: Jack Rear Line Out, alsa_name='Rear Line Out Jack', index='0', detection unavailable
+D: [pulseaudio] alsa-mixer.c: Jack Rear Line Out Phantom, alsa_name='Rear Line Out Phantom Jack', index='0', detection unavailable
+D: [pulseaudio] alsa-mixer.c: Jack Line Out Front, alsa_name='Line Out Front Jack', index='0', detection unavailable
+D: [pulseaudio] alsa-mixer.c: Jack Line Out Front Phantom, alsa_name='Line Out Front Phantom Jack', index='0', detection unavailable
+D: [pulseaudio] alsa-mixer.c: Jack Line Out CLFE, alsa_name='Line Out CLFE Jack', index='0', detection unavailable
+D: [pulseaudio] alsa-mixer.c: Jack Line Out CLFE Phantom, alsa_name='Line Out CLFE Phantom Jack', index='0', detection unavailable
+D: [pulseaudio] alsa-mixer.c: Jack Line Out Surround, alsa_name='Line Out Surround Jack', index='0', detection unavailable
+D: [pulseaudio] alsa-mixer.c: Jack Line Out Surround Phantom, alsa_name='Line Out Surround Phantom Jack', index='0', detection unavailable
+D: [pulseaudio] alsa-mixer.c: Jack Line Out Side, alsa_name='Line Out Side Jack', index='0', detection unavailable
+D: [pulseaudio] alsa-mixer.c: Jack Line Out Side Phantom, alsa_name='Line Out Side Phantom Jack', index='0', detection unavailable
+D: [pulseaudio] alsa-mixer.c: Jack Dock Line Out, alsa_name='Dock Line Out Jack', index='0', detection unavailable
+D: [pulseaudio] alsa-mixer.c: Jack Dock Line Out Phantom, alsa_name='Dock Line Out Phantom Jack', index='0', detection unavailable
+W: [pulseaudio] alsa-mixer.c: Failed to set switch of 'Headphone': Input/output error
+I: [pulseaudio] alsa-sink.c: Successfully enabled deferred volume.
+I: [pulseaudio] alsa-sink.c: Hardware volume ranges from -116.25 dB to 0.00 dB.
+I: [pulseaudio] alsa-sink.c: Fixing base volume to 0.00 dB
+I: [pulseaudio] alsa-sink.c: Using hardware volume control. Hardware dB scale supported.
+I: [pulseaudio] alsa-sink.c: Using hardware mute control.
+D: [pulseaudio] alsa-util.c: snd_pcm_dump():
+D: [pulseaudio] alsa-util.c: Hardware PCM card 0 'HDA Intel PCH' device 0 subdevice 0
+D: [pulseaudio] alsa-util.c: Its setup is:
+D: [pulseaudio] alsa-util.c:   stream       : PLAYBACK
+D: [pulseaudio] alsa-util.c:   access       : MMAP_INTERLEAVED
+D: [pulseaudio] alsa-util.c:   format       : S16_LE
+D: [pulseaudio] alsa-util.c:   subformat    : STD
+D: [pulseaudio] alsa-util.c:   channels     : 2
+D: [pulseaudio] alsa-util.c:   rate         : 44100
+D: [pulseaudio] alsa-util.c:   exact rate   : 44100 (44100/1)
+D: [pulseaudio] alsa-util.c:   msbits       : 16
+D: [pulseaudio] alsa-util.c:   buffer_size  : 88200
+D: [pulseaudio] alsa-util.c:   period_size  : 44100
+D: [pulseaudio] alsa-util.c:   period_time  : 1000000
+D: [pulseaudio] alsa-util.c:   tstamp_mode  : ENABLE
+D: [pulseaudio] alsa-util.c:   tstamp_type  : MONOTONIC
+D: [pulseaudio] alsa-util.c:   period_step  : 1
+D: [pulseaudio] alsa-util.c:   avail_min    : 87319
+D: [pulseaudio] alsa-util.c:   period_event : 0
+D: [pulseaudio] alsa-util.c:   start_threshold  : -1
+D: [pulseaudio] alsa-util.c:   stop_threshold   : 6206523236469964800
+D: [pulseaudio] alsa-util.c:   silence_threshold: 0
+D: [pulseaudio] alsa-util.c:   silence_size : 0
+D: [pulseaudio] alsa-util.c:   boundary     : 6206523236469964800
+D: [pulseaudio] alsa-util.c:   appl_ptr     : 0
+D: [pulseaudio] alsa-util.c:   hw_ptr       : 0
+D: [pulseaudio] alsa-sink.c: Requested volume: front-left: 56752 /  87% / -3.75 dB,   front-right: 56752 /  87% / -3.75 dB
+D: [pulseaudio] alsa-sink.c: Got hardware volume: front-left: 56752 /  87% / -3.75 dB,   front-right: 56752 /  87% / -3.75 dB
+D: [alsa-sink-ALC671 Analog] alsa-sink.c: Thread starting up
+D: [pulseaudio] alsa-sink.c: Calculated software volume: front-left: 65536 / 100% / 0.00 dB,   front-right: 65536 / 100% / 0.00 dB (accurate-enough=yes)
+D: [alsa-sink-ALC671 Analog] util.c: SCHED_RR|SCHED_RESET_ON_FORK worked.
+I: [alsa-sink-ALC671 Analog] util.c: Successfully enabled SCHED_RR scheduling for thread, with priority 5.
+D: [pulseaudio] sink.c: alsa_output.pci-0000_00_0e.0.analog-stereo: state: INIT -> IDLE
+I: [alsa-sink-ALC671 Analog] alsa-sink.c: Starting playback.
+D: [alsa-sink-ALC671 Analog] alsa-sink.c: Cutting sleep time for the initial iterations by half.
+D: [alsa-sink-ALC671 Analog] alsa-sink.c: Cutting sleep time for the initial iterations by half.
+D: [pulseaudio] source.c: alsa_output.pci-0000_00_0e.0.analog-stereo.monitor: state: INIT -> IDLE
+I: [pulseaudio] core.c: default_source: (unset) -> alsa_output.pci-0000_00_0e.0.analog-stereo.monitor
+D: [pulseaudio] module-device-restore.c: Could not set format on sink alsa_output.pci-0000_00_0e.0.analog-stereo
+I: [pulseaudio] core.c: default_sink: (unset) -> alsa_output.pci-0000_00_0e.0.analog-stereo
+D: [pulseaudio] core-subscribe.c: Dropped redundant event due to change event.
+D: [pulseaudio] alsa-util.c: Trying hw:CARD=PCH,DEV=0 with SND_PCM_NO_AUTO_FORMAT ...
+D: [pulseaudio] alsa-util.c: Managed to open hw:CARD=PCH,DEV=0
+I: [pulseaudio] alsa-util.c: Trying to disable ALSA period wakeups, using timers only
+D: [pulseaudio] alsa-util.c: Maximum hw buffer size is 23777 ms
+D: [pulseaudio] alsa-util.c: Set buffer size first (to 88200 samples), period size second (to 88200 samples).
+I: [pulseaudio] alsa-util.c: ALSA period wakeups disabled
+I: [pulseaudio] alsa-source.c: Successfully opened device hw:CARD=PCH,DEV=0.
+I: [pulseaudio] alsa-source.c: Selected mapping 'Analog Stereo' (analog-stereo).
+I: [pulseaudio] alsa-source.c: Successfully enabled mmap() mode.
+I: [pulseaudio] alsa-source.c: Successfully enabled timer-based scheduling mode.
+I: [pulseaudio] alsa-util.c: Successfully attached to mixer 'hw:0'
+D: [pulseaudio] alsa-util.c: ALSA alias mixers: hw:0 = hw:PCH
+D: [pulseaudio] alsa-mixer.c: Added 1 ports
+I: [pulseaudio] module-device-restore.c: Restoring port 'analog-input-linein' for source source:alsa_input.pci-0000_00_0e.0.analog-stereo.
+I: [pulseaudio] module-device-restore.c: Restoring volume for source alsa_input.pci-0000_00_0e.0.analog-stereo: front-left: 12345 /  19%,   front-right: 12345 /  19%
+I: [pulseaudio] source.c: Created source 1 "alsa_input.pci-0000_00_0e.0.analog-stereo" with sample spec s16le 2ch 44100Hz and channel map front-left,front-right
+I: [pulseaudio] source.c:     alsa.resolution_bits = "16"
+I: [pulseaudio] source.c:     device.api = "alsa"
+I: [pulseaudio] source.c:     device.class = "sound"
+I: [pulseaudio] source.c:     alsa.class = "generic"
+I: [pulseaudio] source.c:     alsa.subclass = "generic-mix"
+I: [pulseaudio] source.c:     alsa.name = "ALC671 Analog"
+I: [pulseaudio] source.c:     alsa.id = "ALC671 Analog"
+I: [pulseaudio] source.c:     alsa.subdevice = "0"
+I: [pulseaudio] source.c:     alsa.subdevice_name = "subdevice #0"
+I: [pulseaudio] source.c:     alsa.device = "0"
+I: [pulseaudio] source.c:     alsa.card = "0"
+I: [pulseaudio] source.c:     alsa.card_name = "HDA Intel PCH"
+I: [pulseaudio] source.c:     alsa.long_card_name = "HDA Intel PCH at 0xa1210000 irq 132"
+I: [pulseaudio] source.c:     alsa.driver_name = "snd_hda_intel"
+I: [pulseaudio] source.c:     device.bus_path = "pci-0000:00:0e.0"
+I: [pulseaudio] source.c:     sysfs.path = "/devices/pci0000:00/0000:00:0e.0/sound/card0"
+I: [pulseaudio] source.c:     device.bus = "pci"
+I: [pulseaudio] source.c:     device.vendor.id = "8086"
+I: [pulseaudio] source.c:     device.vendor.name = "Intel Corporation"
+I: [pulseaudio] source.c:     device.product.id = "3198"
+I: [pulseaudio] source.c:     device.product.name = "Celeron/Pentium Silver Processor High Definition Audio"
+I: [pulseaudio] source.c:     device.form_factor = "internal"
+I: [pulseaudio] source.c:     device.string = "hw:CARD=PCH,DEV=0"
+I: [pulseaudio] source.c:     device.buffering.buffer_size = "352800"
+I: [pulseaudio] source.c:     device.buffering.fragment_size = "176400"
+I: [pulseaudio] source.c:     device.access_mode = "mmap+timer"
+I: [pulseaudio] source.c:     device.profile.name = "analog-stereo"
+I: [pulseaudio] source.c:     device.profile.description = "Analog Stereo"
+I: [pulseaudio] source.c:     device.description = "Built-in Audio Analog Stereo"
+I: [pulseaudio] source.c:     module-udev-detect.discovered = "1"
+I: [pulseaudio] source.c:     device.icon_name = "audio-card-pci"
+I: [pulseaudio] alsa-source.c: Using 2.0 fragments of size 176400 bytes (1000.00ms), buffer size is 352800 bytes (2000.00ms)
+I: [pulseaudio] alsa-source.c: Time scheduling watermark is 20.00ms
+D: [pulseaudio] alsa-source.c: hwbuf_unused=0
+D: [pulseaudio] alsa-source.c: setting avail_min=87319
+D: [pulseaudio] alsa-mixer.c: Activating path analog-input-linein
+D: [pulseaudio] alsa-mixer.c: Path analog-input-linein (Line In), direction=2, priority=81, probed=yes, supported=yes, has_mute=yes, has_volume=yes, has_dB=yes, min_volume=0, max_volume=31, min_dB=-16.5, max_dB=66
+D: [pulseaudio] alsa-mixer.c: Element 'Capture', direction=2, switch=1, volume=1, volume_limit=-1, enumeration=0, required=0, required_any=0, required_absent=0, mask=0x3600000000f66, n_channels=2, override_map=03
+D: [pulseaudio] alsa-mixer.c: Element 'Line Boost', direction=2, switch=0, volume=1, volume_limit=-1, enumeration=0, required=0, required_any=4, required_absent=0, mask=0x3600000000f66, n_channels=2, override_map=03
+D: [pulseaudio] alsa-mixer.c: Element 'Input Source', direction=2, switch=0, volume=0, volume_limit=-1, enumeration=1, required=0, required_any=0, required_absent=0, mask=0x0, n_channels=0, override_map=00
+D: [pulseaudio] alsa-mixer.c: Option Line (analog-input-linein/analog-input-linein) index=1, priority=0
+D: [pulseaudio] alsa-mixer.c: Element 'Mic Boost', direction=2, switch=0, volume=2, volume_limit=-1, enumeration=0, required=0, required_any=0, required_absent=0, mask=0x6, n_channels=2, override_map=00
+D: [pulseaudio] alsa-mixer.c: Jack Line, alsa_name='Line Jack', index='0', detection possible
+D: [pulseaudio] alsa-mixer.c: Jack Line Phantom, alsa_name='Line Phantom Jack', index='0', detection unavailable
+D: [pulseaudio] alsa-mixer.c: Jack Line - Input, alsa_name='Line - Input Jack', index='0', detection unavailable
+D: [pulseaudio] alsa-mixer.c: Setting analog-input-linein (analog-input-linein) priority=0
+I: [pulseaudio] alsa-source.c: Successfully enabled deferred volume.
+I: [pulseaudio] alsa-source.c: Hardware volume ranges from -16.50 dB to 66.00 dB.
+I: [pulseaudio] alsa-source.c: Fixing base volume to -66.00 dB
+I: [pulseaudio] alsa-source.c: Using hardware volume control. Hardware dB scale supported.
+I: [pulseaudio] alsa-source.c: Using hardware mute control.
+D: [pulseaudio] alsa-util.c: snd_pcm_dump():
+D: [pulseaudio] alsa-util.c: Hardware PCM card 0 'HDA Intel PCH' device 0 subdevice 0
+D: [pulseaudio] alsa-util.c: Its setup is:
+D: [pulseaudio] alsa-util.c:   stream       : CAPTURE
+D: [pulseaudio] alsa-util.c:   access       : MMAP_INTERLEAVED
+D: [pulseaudio] alsa-util.c:   format       : S16_LE
+D: [pulseaudio] alsa-util.c:   subformat    : STD
+D: [pulseaudio] alsa-util.c:   channels     : 2
+D: [pulseaudio] alsa-util.c:   rate         : 44100
+D: [pulseaudio] alsa-util.c:   exact rate   : 44100 (44100/1)
+D: [pulseaudio] alsa-util.c:   msbits       : 16
+D: [pulseaudio] alsa-util.c:   buffer_size  : 88200
+D: [pulseaudio] alsa-util.c:   period_size  : 44100
+D: [pulseaudio] alsa-util.c:   period_time  : 1000000
+D: [pulseaudio] alsa-util.c:   tstamp_mode  : ENABLE
+D: [pulseaudio] alsa-util.c:   tstamp_type  : MONOTONIC
+D: [pulseaudio] alsa-util.c:   period_step  : 1
+D: [pulseaudio] alsa-util.c:   avail_min    : 87319
+D: [pulseaudio] alsa-util.c:   period_event : 0
+D: [pulseaudio] alsa-util.c:   start_threshold  : -1
+D: [pulseaudio] alsa-util.c:   stop_threshold   : 6206523236469964800
+D: [pulseaudio] alsa-util.c:   silence_threshold: 0
+D: [pulseaudio] alsa-util.c:   silence_size : 0
+D: [pulseaudio] alsa-util.c:   boundary     : 6206523236469964800
+D: [pulseaudio] alsa-util.c:   appl_ptr     : 0
+D: [pulseaudio] alsa-util.c:   hw_ptr       : 0
+D: [pulseaudio] alsa-source.c: Requested volume: front-left: 12345 /  19% / -43.50 dB,   front-right: 12345 /  19% / -43.50 dB
+D: [alsa-source-ALC671 Analog] alsa-source.c: Thread starting up
+D: [pulseaudio] alsa-source.c: Got hardware volume: front-left: 12345 /  19% / -43.50 dB,   front-right: 12345 /  19% / -43.50 dB
+D: [pulseaudio] alsa-source.c: Calculated software volume: front-left: 65536 / 100% / 0.00 dB,   front-right: 65536 / 100% / 0.00 dB (accurate-enough=yes)
+D: [alsa-source-ALC671 Analog] util.c: SCHED_RR|SCHED_RESET_ON_FORK worked.
+I: [alsa-source-ALC671 Analog] util.c: Successfully enabled SCHED_RR scheduling for thread, with priority 5.
+I: [alsa-source-ALC671 Analog] alsa-source.c: Starting capture.
+D: [pulseaudio] source.c: alsa_input.pci-0000_00_0e.0.analog-stereo: state: INIT -> IDLE
+I: [pulseaudio] core.c: default_source: alsa_output.pci-0000_00_0e.0.analog-stereo.monitor -> alsa_input.pci-0000_00_0e.0.analog-stereo
+D: [pulseaudio] core-subscribe.c: Dropped redundant event due to change event.
+I: [pulseaudio] module.c: Loaded "module-alsa-card" (index: #4; argument: "device_id="0" name="pci-0000_00_0e.0" card_name="alsa_card.pci-0000_00_0e.0" namereg_fail=false tsched=yes fixed_latency_range=no ignore_dB=no deferred_volume=yes use_ucm=yes avoid_resampling=no card_properties="module-udev-detect.discovered=1"").
+I: [pulseaudio] module-udev-detect.c: Card /devices/pci0000:00/0000:00:0e.0/sound/card0 (alsa_card.pci-0000_00_0e.0) module loaded.
+I: [pulseaudio] module-udev-detect.c: Found 1 cards.
+I: [pulseaudio] module.c: Loaded "module-udev-detect" (index: #3; argument: "").
+D: [pulseaudio] module.c: Checking for existence of '/usr/lib/pulse-16.1+dfsg1/modules/module-esound-protocol-unix.so': failure
+I: [pulseaudio] module.c: Loaded "module-native-protocol-unix" (index: #5; argument: "auth-anonymous=1").
+I: [pulseaudio] module-default-device-restore.c: No previous default sink setting, ignoring.
+I: [pulseaudio] module-default-device-restore.c: Restoring default source 'alsa_input.pci-0000_00_0e.0.analog-stereo'.
+I: [pulseaudio] core.c: configured_default_source: (unset) -> alsa_input.pci-0000_00_0e.0.analog-stereo
+D: [pulseaudio] core-subscribe.c: Dropped redundant event due to change event.
+I: [pulseaudio] module.c: Loaded "module-default-device-restore" (index: #6; argument: "").
+I: [pulseaudio] module.c: Loaded "module-always-sink" (index: #7; argument: "").
+D: [pulseaudio] module-suspend-on-idle.c: Sink alsa_output.pci-0000_00_0e.0.analog-stereo becomes idle, timeout in 5 seconds.
+D: [pulseaudio] module-suspend-on-idle.c: Source alsa_input.pci-0000_00_0e.0.analog-stereo becomes idle, timeout in 5 seconds.
+I: [pulseaudio] module.c: Loaded "module-suspend-on-idle" (index: #8; argument: "").
+I: [pulseaudio] module.c: Loaded "module-position-event-sounds" (index: #9; argument: "").
+D: [pulseaudio] dbus-util.c: Successfully connected to D-Bus system bus 93fca1c956d6914777fabc1b68343e23 as :1.1474
+D: [pulseaudio] main.c: Got org.pulseaudio.Server!
+I: [pulseaudio] main.c: Daemon startup complete.
+D: [pulseaudio] module-udev-detect.c: /dev/snd/controlC0 is accessible: yes
+D: [pulseaudio] module-udev-detect.c: Resuming all sinks and sources of card alsa_card.pci-0000_00_0e.0.
+D: [alsa-sink-ALC671 Analog] alsa-sink.c: Cutting sleep time for the initial iterations by half.
+D: [alsa-sink-ALC671 Analog] alsa-sink.c: Cutting sleep time for the initial iterations by half.
+D: [alsa-sink-ALC671 Analog] alsa-sink.c: Cutting sleep time for the initial iterations by half.
+D: [alsa-sink-ALC671 Analog] alsa-sink.c: Cutting sleep time for the initial iterations by half.
+^CI: [pulseaudio] main.c: Got signal SIGINT.
+I: [pulseaudio] main.c: Exiting.
+I: [pulseaudio] main.c: Daemon shutdown initiated.
+I: [pulseaudio] module.c: Unloading "module-position-event-sounds" (index: #9).
+I: [pulseaudio] module.c: Unloaded "module-position-event-sounds" (index: #9).
+I: [pulseaudio] module.c: Unloading "module-suspend-on-idle" (index: #8).
+I: [pulseaudio] module.c: Unloaded "module-suspend-on-idle" (index: #8).
+I: [pulseaudio] module.c: Unloading "module-always-sink" (index: #7).
+I: [pulseaudio] module.c: Unloaded "module-always-sink" (index: #7).
+I: [pulseaudio] module.c: Unloading "module-default-device-restore" (index: #6).
+I: [pulseaudio] module.c: Unloaded "module-default-device-restore" (index: #6).
+I: [pulseaudio] module.c: Unloading "module-native-protocol-unix" (index: #5).
+I: [pulseaudio] module.c: Unloaded "module-native-protocol-unix" (index: #5).
+I: [pulseaudio] module.c: Unloading "module-alsa-card" (index: #4).
+I: [pulseaudio] core.c: default_sink: alsa_output.pci-0000_00_0e.0.analog-stereo -> (unset)
+D: [alsa-sink-ALC671 Analog] alsa-sink.c: Cutting sleep time for the initial iterations by half.
+D: [alsa-sink-ALC671 Analog] alsa-sink.c: Cutting sleep time for the initial iterations by half.
+D: [pulseaudio] source.c: alsa_output.pci-0000_00_0e.0.analog-stereo.monitor: state: IDLE -> UNLINKED
+D: [alsa-sink-ALC671 Analog] alsa-sink.c: Cutting sleep time for the initial iterations by half.
+D: [pulseaudio] sink.c: alsa_output.pci-0000_00_0e.0.analog-stereo: state: IDLE -> UNLINKED
+D: [alsa-sink-ALC671 Analog] alsa-sink.c: Thread shutting down
+I: [pulseaudio] sink.c: Freeing sink 0 "alsa_output.pci-0000_00_0e.0.analog-stereo"
+I: [pulseaudio] source.c: Freeing source 0 "alsa_output.pci-0000_00_0e.0.analog-stereo.monitor"
+I: [pulseaudio] core.c: default_source: alsa_input.pci-0000_00_0e.0.analog-stereo -> (unset)
+D: [pulseaudio] core-subscribe.c: Dropped redundant event due to change event.
+D: [pulseaudio] source.c: alsa_input.pci-0000_00_0e.0.analog-stereo: state: IDLE -> UNLINKED
+D: [alsa-source-ALC671 Analog] alsa-source.c: Thread shutting down
+I: [pulseaudio] source.c: Freeing source 1 "alsa_input.pci-0000_00_0e.0.analog-stereo"
+I: [pulseaudio] card.c: Freed 0 "alsa_card.pci-0000_00_0e.0"
+I: [pulseaudio] module.c: Unloaded "module-alsa-card" (index: #4).
+I: [pulseaudio] module.c: Unloading "module-udev-detect" (index: #3).
+I: [pulseaudio] module.c: Unloaded "module-udev-detect" (index: #3).
+I: [pulseaudio] module.c: Unloading "module-card-restore" (index: #2).
+I: [pulseaudio] module.c: Unloaded "module-card-restore" (index: #2).
+I: [pulseaudio] module.c: Unloading "module-stream-restore" (index: #1).
+D: [pulseaudio] protocol-dbus.c: Interface org.PulseAudio.Ext.StreamRestore1 removed from object /org/pulseaudio/stream_restore1
+D: [pulseaudio] protocol-dbus.c: Interface org.PulseAudio.Ext.StreamRestore1.RestoreEntry removed from object /org/pulseaudio/stream_restore1/entry0
+D: [pulseaudio] protocol-dbus.c: Interface org.PulseAudio.Ext.StreamRestore1.RestoreEntry removed from object /org/pulseaudio/stream_restore1/entry1
+D: [pulseaudio] protocol-dbus.c: Interface org.PulseAudio.Ext.StreamRestore1.RestoreEntry removed from object /org/pulseaudio/stream_restore1/entry2
+D: [pulseaudio] protocol-dbus.c: Interface org.PulseAudio.Ext.StreamRestore1.RestoreEntry removed from object /org/pulseaudio/stream_restore1/entry3
+D: [pulseaudio] protocol-dbus.c: Interface org.PulseAudio.Ext.StreamRestore1.RestoreEntry removed from object /org/pulseaudio/stream_restore1/entry4
+D: [pulseaudio] protocol-dbus.c: Interface org.PulseAudio.Ext.StreamRestore1.RestoreEntry removed from object /org/pulseaudio/stream_restore1/entry5
+D: [pulseaudio] flist.c: ../src/pulsecore/hashmap.c: entries flist is full (don't worry)
+D: [pulseaudio] flist.c: ../src/pulsecore/hashmap.c: entries flist is full (don't worry)
+I: [pulseaudio] module.c: Unloaded "module-stream-restore" (index: #1).
+I: [pulseaudio] module.c: Unloading "module-device-restore" (index: #0).
+I: [pulseaudio] module.c: Unloaded "module-device-restore" (index: #0).
+I: [pulseaudio] main.c: Daemon terminated.
+root@skrzyczne-radio:/var/local/lubeckim# cd /proc/asound/card0/
+
+
+
